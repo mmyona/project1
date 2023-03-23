@@ -1,8 +1,12 @@
 const color = {
-  black: "#000000",
-  gra_red: "#801304",
-  navy: "#050D3A",
+  gra_org: "#C56041",
+  gra_blue: "#357EEC",
+  gra_green: "53AC3C",
+  gra_mint: "#3CAC91",
+  gra_purple: "#B44BC5",
+  navy: "#03071A",
   gray: "#E5E5E5",
+  white: "#FFFFFF",
 };
 
 const theme = { color };
