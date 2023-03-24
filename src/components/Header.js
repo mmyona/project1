@@ -17,9 +17,21 @@ export const MainHeader = () => {
           color={theme.color.white}
           width="11rem"
           height="5rem"
-          size="1.7rem"
+          fontsize="1.7rem"
           fontFamily="BMDOHYEON"
         />
+      </Link>
+      <Link to="/info">
+        <Btn btnText="서비스 소개" color={theme.color.white} width="8rem" />
+      </Link>
+      <Link to="/list">
+        <Btn btnText="전시 둘러보기" color={theme.color.white} width="8rem" />
+      </Link>
+      <Link to="/request">
+        <Btn btnText="전시 의뢰하기" color={theme.color.white} width="8rem" />
+      </Link>
+      <Link to="/center">
+        <Btn btnText="고객 센터" color={theme.color.white} width="8rem" />
       </Link>
       <div>
         {isLogin ? null : (
@@ -33,6 +45,11 @@ export const MainHeader = () => {
           </>
         )}
       </div>
+      {isLogin ? (
+        <Link to="/mypage">
+          <Btn btnText="my page" color={theme.color.white} width="6rem" />
+        </Link>
+      ) : null}
     </Main>
   );
 };

@@ -7,7 +7,7 @@ export const Btn = (props) => {
       <StyledBasicBtn
         background={props.background}
         color={props.color}
-        size={props.size}
+        fontsize={props.fontsize}
         width={props.width}
         height={props.height}
         margin={props.margin}
@@ -39,7 +39,7 @@ const StyledBasicBtn = styled.button`
   font-family: ${(props) => props.fontFamily || "Inter"};
   font-style: normal;
   font-weight: ${(props) => props.fontWeight || "400"};
-  font-size: ${(props) => props.size || "1.3rem"};
+  font-size: ${(props) => props.fontsize || "1rem"};
   line-height: 1.9rem;
   color: ${(props) => props.color || "white"};
 `;
