@@ -1,71 +1,33 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import theme from "./theme";
-
-//components
-import { Btn } from "./atoms/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 export const MainHeader = () => {
-  //login 전/후 조건에 따른 헤더
-  const isLogin = null;
-
   return (
-    <Main>
-      <Link to="/">
-        <Btn
-          btnText="The Imaginarium"
-          color={theme.color.white}
-          width="11rem"
-          height="5rem"
-          fontsize="1.7rem"
-          fontFamily="BMDOHYEON"
-        />
-      </Link>
-      <Link to="/info">
-        <Btn btnText="서비스 소개" color={theme.color.white} width="8rem" />
-      </Link>
-      <Link to="/list">
-        <Btn btnText="전시 둘러보기" color={theme.color.white} width="8rem" />
-      </Link>
-      <Link to="/request">
-        <Btn btnText="전시 의뢰하기" color={theme.color.white} width="8rem" />
-      </Link>
-      <Link to="/center">
-        <Btn btnText="고객 센터" color={theme.color.white} width="8rem" />
-      </Link>
-      <div>
-        {isLogin ? null : (
-          <>
-            <Link to="/login">
-              <Btn btnText="login" color={theme.color.white} width="6rem" />
-            </Link>
-            <Link to="/signup">
-              <Btn btnText="signup" color={theme.color.white} width="6rem" />
-            </Link>
-          </>
-        )}
-      </div>
-      {isLogin ? (
-        <Link to="/mypage">
-          <Btn btnText="my page" color={theme.color.white} width="6rem" />
-        </Link>
-      ) : null}
-    </Main>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">The Imaginarium</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Nav.Link href="/login">login </Nav.Link>
+        <Nav.Link href="/signup">signup</Nav.Link>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/info">서비스 소개</Nav.Link>
+            <Nav.Link href="/customer">고객 센터</Nav.Link>
+            <NavDropdown title="전시 둘러보기" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/list/public">
+                전체 공개 전시
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/list/private">
+                개인 전시
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/request">전시 의뢰하기</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
-
-const Main = styled.div`
-  border-bottom: 1px solid ${theme.color.white};
-  width: 98%;
-  /* max-width: 480px; */
-  height: 5.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  padding: 0 1.3rem;
-`;
