@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
-  background-color: #03071a;
+  background-color: #030824;
 }
 
 @font-face {

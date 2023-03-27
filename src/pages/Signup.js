@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
+import theme from "../components/theme";
 
-const Signup = () => {
-  return <div>Signup</div>;
+export const Signup = () => {
+  return <></>;
 };
-
-export default Signup;

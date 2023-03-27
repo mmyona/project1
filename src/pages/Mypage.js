@@ -1,7 +1,9 @@
 import React from "react";
+import styled from "styled-components";
+import theme from "../components/theme";
 
-const Mypage = () => {
-  return <div>Mypage</div>;
+//components
+
+export const Mypage = () => {
+  return <></>;
 };
-
-export default Mypage;

@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
+import theme from "../components/theme";
 
-const Login = () => {
-  return <div>Login</div>;
+export const Login = () => {
+  return <></>;
 };
-
-export default Login;

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
-const Router2 = () => {
+export const Unity1 = () => {
   const {
     unityProvider,
     UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate,
@@ -23,9 +23,7 @@ const Router2 = () => {
   return (
     <div>
       <div>Unity map</div>
-      <Unity unityProvider={unityProvider} />
+      <Unity unityProvider={unityProvider} style={{ height: "500px" }} />
     </div>
   );
 };
-
-export default Router2;

@@ -4,7 +4,7 @@ const color = {
   gra_green: "53AC3C",
   gra_mint: "#3CAC91",
   gra_purple: "#B44BC5",
-  navy: "#03071A",
+  navy: "#030824",
   gray: "#E5E5E5",
   white: "#FFFFFF",
 };
