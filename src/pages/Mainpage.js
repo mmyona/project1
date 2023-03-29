@@ -1,7 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import theme from "../components/theme";
+import "../css/mainpage.css";
 
-export const Mainpage = () => {
-  return <></>;
-};
+function Mainpage() {
+  return (
+    <div className="content">
+      <div></div>
+    </div>
+  );
+}
+
+export default Mainpage;
