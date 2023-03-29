@@ -184,24 +184,20 @@ export const Signup = () => {
           errmsg={inputErr.passwordCheck && "비밀번호가 일치하지 않습니다"}
         />
       </div>
-      <Btn
-        btnText="확인"
-        background={theme.color.green}
-        width="34rem"
-        type="submit"
-      />
+      <Btn btnText="확인" width="34rem" type="submit" />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.form`
+  background: transparent;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
 
   input {
     margin: 0 auto;

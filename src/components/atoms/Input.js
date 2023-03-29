@@ -2,27 +2,6 @@ import styled from "styled-components";
 import React from "react";
 import theme from "../theme";
 
-export const Input = React.forwardRef((props, ref) => {
-  return (
-    <>
-      <StyledLabel>{props.label}</StyledLabel>
-      <StyledInput
-        placeholder={props.placeholder}
-        value={props.value}
-        margin={props.margin}
-        padding={props.padding}
-        rows={props.rows || "1"}
-        borderRadius={props.borderRadius}
-        fontSize={props.fontSize}
-        lineHeight={props.lineHeight}
-        onChange={props.onChange}
-        borderColor={props.borderColor}
-        {...props.register}
-      ></StyledInput>
-    </>
-  );
-});
-
 export const InputAuth = (props) => {
   return (
     <Wrapper>
@@ -33,6 +12,7 @@ export const InputAuth = (props) => {
         onChange={props.onChange}
         error={props.error}
         id={props.id}
+        width={props.width}
       />
       <p>{props.errmsg}</p>
     </Wrapper>
@@ -46,47 +26,45 @@ export const SearchInput = (props) => {
       value={props.value}
       onChange={props.onChange}
       onKeyUp={props.onKeyUp}
+      border={props.border}
+      width={props.width}
     />
   );
 };
 
-const StyledInput = styled.textarea`
-  border: 0.1rem solid ${(props) => props.borderColor || theme.color.gray};
-  margin: ${(props) => props.margin || "0"};
-  padding: ${(props) => props.padding || "0.6rem"};
-  border-radius: ${(props) => props.borderRadius || "0.8rem"};
-  font-size: ${(props) => props.fontSize || "1rem"};
-  font-family: "Inter";
-  font-style: normal;
-  background-color:"${theme.color.navy}
-  line-height: ${(props) => props.lineHeight || "1.2rem"};
-  resize: none;
-  width: 100%;
-`;
-
-const StyledLabel = styled.div`
-  font-size: ${(props) => props.fontSize || "1.4rem"};
-  line-height: 3rem;
+const StyledInput = styled.input`
+  background: transparent;
+  width: ${(props) => props.width || "34rem"};
+  height: 2.5rem;
+  border: ${(props) => `0.1rem solid ${props.border || theme.color.gray}`};
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  padding-left: 1rem;
 `;
 
 const AuthInput = styled.input`
+  background: transparent;
   width: ${(props) => props.width || "34rem"};
-  //border: 0.1rem solid #4d4d4d;
-  height: 3rem;
+  height: 2.5rem;
   border-radius: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   padding-left: 1rem;
   border: ${(props) =>
-    `0.1rem solid ${props.error ? props.theme.color.red : "#4d4d4d"}`};
+    `0.1rem solid ${props.error ? props.theme.color.red : theme.color.gray}`};
+  :-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px ${theme.color.navy} inset;
+    box-shadow: 0 0 0 1000px ${theme.color.navy} inset;
+    -webkit-text-fill-color: white;
+  }
 `;
 
 const Wrapper = styled.div`
-  line-height: 3rem;
+  line-height: 2.5rem;
   display: flex;
   flex-direction: column;
   width: 36.4rem;
   span {
     padding-left: 2rem;
-    font-size: ${(props) => props.fontSize || "1.3rem"};
+    font-size: ${(props) => props.fontSize || "1rem"};
   }
 `;

@@ -5,8 +5,9 @@ const color = {
   gra_mint: "#3CAC91",
   gra_purple: "#B44BC5",
   navy: "#030824",
-  gray: "#E5E5E5",
+  gray: "#4d4d4d",
   white: "#FFFFFF",
+  red: "#DC2929",
 };
 
 const theme = { color };

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import theme from "./theme";
+import { useEffect, useState } from "react";
 
 //components
 import { Btn } from "./atoms/Button";
@@ -9,6 +10,14 @@ import { SearchInput } from "./atoms/Input";
 export const MainHeader = () => {
   //login 전/후 조건에 따른 헤더
   const isLogin = null;
+  const [searchTerm, setSearchTerm] = useState(""); //검색어
+  const handleSearch = (e) => {
+    e.preventDefault();
+    /*setPage(1);
+		setHasMoreData(true);
+		getPostList();*/
+    console.log("hi");
+  };
 
   return (
     <Main>
@@ -27,7 +36,13 @@ export const MainHeader = () => {
       <Link to="/center">
         <Btn btnText="고객 센터" color={theme.color.white} width="8rem" />
       </Link>
-      <SearchInput />
+      <SearchInput
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") handleSearch(e);
+        }}
+      />
       <div>
         {isLogin ? (
           <Link to="/mypage">
