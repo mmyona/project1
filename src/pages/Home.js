@@ -1,7 +1,7 @@
 import React from "react";
+import styled from "styled-components";
+import theme from "../components/theme";
 
-const Home = () => {
-  return <div>Home</div>;
+export const Home = () => {
+  return <></>;
 };
-
-export default Home;
