@@ -13,14 +13,7 @@ export const MainHeader = () => {
   return (
     <Main>
       <Link to="/">
-        <Btn
-          btnText="The Imaginarium"
-          color={theme.color.white}
-          width="11rem"
-          height="5rem"
-          fontsize="1.7rem"
-          fontFamily="BMDOHYEON"
-        />
+        <Btn btnText="Logo" color={theme.color.white} width="8rem" />
       </Link>
       <Link to="/info">
         <Btn btnText="서비스 소개" color={theme.color.white} width="8rem" />
@@ -56,7 +49,6 @@ export const MainHeader = () => {
 };
 
 const Main = styled.div`
-  border-bottom: 1px solid ${theme.color.white};
   background-color: #030824;
   width: 100%;
   height: 5.2rem;
@@ -69,4 +61,7 @@ const Main = styled.div`
   right: 0;
   margin: 0 auto;
   padding: 0 1.3rem;
+  img {
+    height: 9rem;
+  }
 `;
