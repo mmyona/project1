@@ -35,6 +35,4 @@ export const Router = () => {
   );
 };
 
-const Container = styled.div`
-  margin-top: 6rem;
-`;
+const Container = styled.div``;

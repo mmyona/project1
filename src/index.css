@@ -3,10 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
+  background-color: #030824;
 }
 
 body {
-  background-color: #030824;
 }
 
 @font-face {
