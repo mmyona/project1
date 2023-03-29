@@ -4,6 +4,7 @@ import theme from "./theme";
 
 //components
 import { Btn } from "./atoms/Button";
+import { SearchInput } from "./atoms/Input";
 
 export const MainHeader = () => {
   //login 전/후 조건에 따른 헤더
@@ -33,6 +34,7 @@ export const MainHeader = () => {
       <Link to="/center">
         <Btn btnText="고객 센터" color={theme.color.white} width="8rem" />
       </Link>
+      <SearchInput />
       <div>
         {isLogin ? (
           <Link to="/mypage">

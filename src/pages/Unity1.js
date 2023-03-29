@@ -6,10 +6,10 @@ export const Unity1 = () => {
     unityProvider,
     UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate,
   } = useUnityContext({
-    loaderUrl: "unity/Build/개개비.loader.js",
-    dataUrl: "unity/Build/개개비.data",
-    frameworkUrl: "unity/Build/개개비.framework.js",
-    codeUrl: "unity/Build/개개비.wasm",
+    loaderUrl: "unity/Build/test.loader.js",
+    dataUrl: "unity/Build/test.data",
+    frameworkUrl: "unity/Build/test.framework.js",
+    codeUrl: "unity/Build/test.wasm",
   });
 
   useEffect(() => {

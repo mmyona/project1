@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import theme from "./theme";
+import theme from "../theme";
 
 export const Input = React.forwardRef((props, ref) => {
   return (
@@ -55,10 +55,11 @@ const StyledInput = styled.textarea`
   margin: ${(props) => props.margin || "0"};
   padding: ${(props) => props.padding || "0.6rem"};
   border-radius: ${(props) => props.borderRadius || "0.8rem"};
-  font-size: ${(props) => props.fontSize || "1.3rem"};
+  font-size: ${(props) => props.fontSize || "1rem"};
   font-family: "Inter";
   font-style: normal;
-  line-height: ${(props) => props.lineHeight || "1.6rem"};
+  background-color:"${theme.color.navy}
+  line-height: ${(props) => props.lineHeight || "1.2rem"};
   resize: none;
   width: 100%;
 `;
