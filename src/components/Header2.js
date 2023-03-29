@@ -74,7 +74,6 @@ const Main = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   padding: 0 1.3rem;
   img {
     height: 9rem;

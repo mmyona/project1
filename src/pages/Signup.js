@@ -190,7 +190,6 @@ export const Signup = () => {
 };
 
 const Wrapper = styled.form`
-  background: transparent;
   width: 100%;
   min-height: 100vh;
   display: flex;
