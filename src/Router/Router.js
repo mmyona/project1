@@ -9,7 +9,7 @@ import { Signup } from "../pages/Signup";
 import { Info } from "../pages/Info";
 import { Request } from "../pages/Request";
 import { UnityList } from "../pages/UnityList";
-import { MainHeader } from "../components/Header2";
+import { MainHeader } from "../components/Header3";
 import { Center } from "../pages/Center";
 
 //unity components
@@ -18,13 +18,11 @@ import { Unity1 } from "../pages/Unity1";
 export const Router = () => {
   return (
     <Container>
-      <MainHeader />
-      <Routes className="magin">
+      <Routes className="margin">
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/signup" element={<Signup />} />
-
         <Route path="/unity1" element={<Unity1 />} />
         <Route path="/list" element={<UnityList />} />
         <Route path="/request" element={<Request />} />
@@ -35,6 +33,4 @@ export const Router = () => {
   );
 };
 
-const Container = styled.div`
-  margin-top: 6rem;
-`;
+const Container = styled.div``;

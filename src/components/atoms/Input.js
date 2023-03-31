@@ -27,15 +27,15 @@ export const SearchInput = (props) => {
       onChange={props.onChange}
       onKeyUp={props.onKeyUp}
       border={props.border}
-      width={props.width}
     />
   );
 };
 
 const StyledInput = styled.input`
   background: transparent;
-  width: ${(props) => props.width || "34rem"};
+  width: 30rem;
   height: 2.5rem;
+  margin-right: 1rem;
   border: ${(props) => `0.1rem solid ${props.border || theme.color.gray}`};
   border-radius: 0.8rem;
   font-size: 1rem;
@@ -50,7 +50,7 @@ const AuthInput = styled.input`
   font-size: 1rem;
   padding-left: 1rem;
   border: ${(props) =>
-    `0.1rem solid ${props.error ? props.theme.color.red : theme.color.gray}`};
+    `0.1rem solid ${props.error ? theme.color.red : theme.color.gray}`};
   :-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px ${theme.color.navy} inset;
     box-shadow: 0 0 0 1000px ${theme.color.navy} inset;

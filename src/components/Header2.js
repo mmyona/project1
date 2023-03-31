@@ -22,7 +22,7 @@ export const MainHeader = () => {
   return (
     <Main>
       <Link to="/">
-        <Btn btnText="Logo" color={theme.color.white} width="8rem" />
+        <img alt="logo" src="images/The Imaginarium (2).png" />
       </Link>
       <Link to="/info">
         <Btn btnText="서비스 소개" color={theme.color.white} width="8rem" />
@@ -43,28 +43,25 @@ export const MainHeader = () => {
           if (e.key === "Enter") handleSearch(e);
         }}
       />
-      <div>
-        {isLogin ? (
-          <Link to="/mypage">
-            <Btn btnText="my page" color={theme.color.white} width="6rem" />
+      {isLogin ? (
+        <Link to="/mypage">
+          <Btn btnText="my page" color={theme.color.white} width="6rem" />
+        </Link>
+      ) : (
+        <div>
+          <Link to="/login">
+            <Btn btnText="login" color={theme.color.white} width="6rem" />
           </Link>
-        ) : (
-          <>
-            <Link to="/login">
-              <Btn btnText="login" color={theme.color.white} width="6rem" />
-            </Link>
-            <Link to="/signup">
-              <Btn btnText="signup" color={theme.color.white} width="6rem" />
-            </Link>
-          </>
-        )}
-      </div>
+          <Link to="/signup">
+            <Btn btnText="signup" color={theme.color.white} width="6rem" />
+          </Link>
+        </div>
+      )}
     </Main>
   );
 };
 
 const Main = styled.div`
-  background-color: #030824;
   width: 100%;
   height: 5.2rem;
   display: flex;
@@ -74,9 +71,13 @@ const Main = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
   padding: 0 1.3rem;
   img {
-    height: 9rem;
+    height: 5.2rem;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `;

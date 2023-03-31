@@ -50,7 +50,7 @@ export const Info = () => {
         </p>
       </div>
       <div>
-        <h2>추후 활용 방안 및 기대 효과</h2>
+        <h3>추후 활용 방안 및 기대 효과</h3>
         <p>
           작품 전시뿐만 아니라 행사 및 문화재 홍보의 공간으로 활용 가능
           <br /> 시간과 비용을 절약하며 문화 예술 향유 가능
@@ -69,4 +69,14 @@ export const Info = () => {
 
 const InfoContainer = styled.div`
   white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  div{
+    width:60rem;
+    padding:1rem;
+  }
+  }
 `;

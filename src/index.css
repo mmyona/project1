@@ -3,10 +3,20 @@
   padding: 0;
   box-sizing: border-box;
   color: white;
+  background-color: #030824;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 7rem;
 }
 
 body {
-  background-color: #030824;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
