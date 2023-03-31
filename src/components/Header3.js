@@ -106,13 +106,11 @@ export const MainHeader = () => {
 
 const StyledHeader = styled.header`
   width: 100%;
-  padding: 0 1.3rem;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 5.2rem;
-  position: fixed;
-
+  padding: 0 1.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -128,7 +126,7 @@ const StyledHeader = styled.header`
   }
 
   img {
-    height: 5.5rem;
+    height: 8rem;
   }
 
   div {

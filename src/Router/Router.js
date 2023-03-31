@@ -18,13 +18,11 @@ import { Unity1 } from "../pages/Unity1";
 export const Router = () => {
   return (
     <Container>
-      <MainHeader />
-      <Routes className="magin">
+      <Routes className="margin">
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/signup" element={<Signup />} />
-
         <Route path="/unity1" element={<Unity1 />} />
         <Route path="/list" element={<UnityList />} />
         <Route path="/request" element={<Request />} />

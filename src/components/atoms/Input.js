@@ -33,8 +33,9 @@ export const SearchInput = (props) => {
 
 const StyledInput = styled.input`
   background: transparent;
-  width: 34rem;
+  width: 30rem;
   height: 2.5rem;
+  margin-right: 1rem;
   border: ${(props) => `0.1rem solid ${props.border || theme.color.gray}`};
   border-radius: 0.8rem;
   font-size: 1rem;
