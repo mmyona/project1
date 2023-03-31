@@ -6,7 +6,16 @@
   background-color: #030824;
 }
 
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
 body {
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
