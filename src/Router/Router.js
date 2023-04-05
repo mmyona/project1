@@ -12,6 +12,7 @@ import { UnityList } from "../pages/UnityList";
 import { Unity2 } from "../pages/Unity2";
 import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
+import { Certify } from "../pages/Certify";
 
 //unity components
 import { Unity1 } from "../pages/Unity1";
@@ -31,6 +32,7 @@ export const Router = () => {
         <Route path="/info" element={<Info />} />
         <Route path="/center" element={<Center />} />
         <Route path="/find" element={<Find />} />
+        <Route path="/certify" element={<Certify />} />
       </Routes>
     </Container>
   );

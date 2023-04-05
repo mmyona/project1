@@ -25,12 +25,14 @@ export const Request = () => {
   }, []);
 
   return (
-    <>
+    <pageWrapper>
       {createModal && (
         <Modal
           modalText={"로그인을 먼저 진행해주세요 로그인 페이지로 이동합니다 "}
         />
       )}
-    </>
+    </pageWrapper>
   );
 };
+
+const pageWrapper = styled.div``;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Avatar = (props) => {
   return (
     <>
-      <StyledAvatar>
+      <StyledAvatar width={props.width}>
         <img src={props.imgURL || "/images/미모티콘.png"} alt="avatar"></img>
       </StyledAvatar>
     </>
@@ -13,8 +13,8 @@ const Avatar = (props) => {
 
 const StyledAvatar = styled.div`
   & > img {
-    width: 3rem;
-    height: 3rem;
+    width: ${(props) => props.width || "3rem"};
+    height: ${(props) => props.width || "3rem"};
     border-radius: 50%;
   }
 `;

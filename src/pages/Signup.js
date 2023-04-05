@@ -147,13 +147,15 @@ export const Signup = () => {
           error={inputErr.name}
           errmsg={inputErr.name && "특수문자 없이 3글자 이상 입력해주세요."}
         />
-        <Btn
-          btnText="실명 인증"
-          fontsize="0.8rem"
-          margin="0"
-          width="34rem"
-          type="submit"
-        />
+        <Link to="/certify">
+          <Btn
+            btnText="실명 인증"
+            fontsize="0.8rem"
+            margin="0"
+            width="34rem"
+            type="submit"
+          />
+        </Link>
       </div>
       <div>
         <InputAuth
@@ -198,7 +200,7 @@ export const Signup = () => {
           width="18rem"
           fontsize="0.8rem"
           type="submit"
-        ></Btn>
+        />
       </Link>
       <Btn btnText="확인" width="34rem" type="submit" />
     </Wrapper>
