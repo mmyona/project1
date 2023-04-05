@@ -195,7 +195,7 @@ export const Signup = () => {
       <Link to="/login">
         <Btn
           btnText="이미 가입한 계정이 있나요? 로그인 하러가기"
-          width="34rem"
+          width="18rem"
           fontsize="0.8rem"
           type="submit"
         ></Btn>

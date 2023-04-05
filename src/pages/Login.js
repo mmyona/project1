@@ -144,7 +144,7 @@ export const Login = () => {
         <Link to="/signup">
           <Btn
             btnText="가입한 계정이 없나요? 회원가입 하러가기"
-            width="34rem"
+            width="17rem"
             fontsize="0.8rem"
             type="submit"
           ></Btn>
@@ -152,7 +152,7 @@ export const Login = () => {
         <Link to="/find">
           <Btn
             btnText="아이디/비밀번호 찾으러 가기"
-            width="34rem"
+            width="14rem"
             fontsize="0.8rem"
             type="submit"
           ></Btn>
