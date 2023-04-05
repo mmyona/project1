@@ -6,6 +6,7 @@ import { Btn } from "../components/atoms/Button";
 import { InputAuth } from "../components/atoms/Input";
 import { Modal } from "../components/atoms/Modal";
 import theme from "../components/theme";
+import { Link } from "react-router-dom/dist";
 
 export const Signup = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -136,7 +137,7 @@ export const Signup = () => {
       {isOpenModal && (
         <Modal modalText="회원가입 성공! 로그인 페이지로 이동합니다." />
       )}
-      <div>
+      <div className="r">
         <InputAuth
           label="이름"
           type="text"
@@ -145,6 +146,13 @@ export const Signup = () => {
           id="name"
           error={inputErr.name}
           errmsg={inputErr.name && "특수문자 없이 3글자 이상 입력해주세요."}
+        />
+        <Btn
+          btnText="실명 인증"
+          fontsize="0.8rem"
+          margin="0"
+          width="34rem"
+          type="submit"
         />
       </div>
       <div>
@@ -184,6 +192,14 @@ export const Signup = () => {
           errmsg={inputErr.passwordCheck && "비밀번호가 일치하지 않습니다"}
         />
       </div>
+      <Link to="/login">
+        <Btn
+          btnText="이미 가입한 계정이 있나요? 로그인 하러가기"
+          width="34rem"
+          fontsize="0.8rem"
+          type="submit"
+        ></Btn>
+      </Link>
       <Btn btnText="확인" width="34rem" type="submit" />
     </Wrapper>
   );
@@ -196,7 +212,7 @@ export const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 
   input {
     margin: 0 auto;
@@ -206,5 +222,8 @@ export const Wrapper = styled.form`
     color: ${theme.color.red};
     padding-left: 2rem;
     margin-top: 0.5rem;
+  }
+  .w {
+    width: 34rem;
   }
 `;

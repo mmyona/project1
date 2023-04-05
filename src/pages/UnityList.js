@@ -11,7 +11,16 @@ export const UnityList = () => {
     <>
       <Link to="/unity1">
         <Btn
-          btnText="Click"
+          btnText="Click Unity1"
+          color={theme.color.white}
+          width="11rem"
+          height="5rem"
+          fontsize="1.7rem"
+        />
+      </Link>
+      <Link to="/unity2">
+        <Btn
+          btnText="Click Unity2"
           color={theme.color.white}
           width="11rem"
           height="5rem"

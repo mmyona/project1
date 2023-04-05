@@ -15,8 +15,8 @@ export const Request = () => {
       setCreateModal(true);
       setTimeout(() => {
         setCreateModal(false);
+        navigate("/login");
       }, 1000);
-      navigate("/");
     }
   };
 
@@ -24,5 +24,13 @@ export const Request = () => {
     handleCreate();
   }, []);
 
-  return <>{createModal && <Modal modalText="로그인을 먼저 진행해주세요" />}</>;
+  return (
+    <>
+      {createModal && (
+        <Modal
+          modalText={"로그인을 먼저 진행해주세요 로그인 페이지로 이동합니다 "}
+        />
+      )}
+    </>
+  );
 };

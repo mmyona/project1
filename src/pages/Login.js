@@ -7,6 +7,7 @@ import { InputAuth } from "../components/atoms/Input";
 import { Modal } from "../components/atoms/Modal";
 
 import { Wrapper } from "./Signup";
+import { Link } from "react-router-dom/dist";
 
 export const Login = () => {
   const [userInput, setUserInput] = useState({
@@ -138,6 +139,24 @@ export const Login = () => {
           }
         />
         {inputErr.signIn && <p>이메일 또는 비밀번호를 확인하세요.</p>}
+      </div>
+      <div className="w">
+        <Link to="/signup">
+          <Btn
+            btnText="가입한 계정이 없나요? 회원가입 하러가기"
+            width="34rem"
+            fontsize="0.8rem"
+            type="submit"
+          ></Btn>
+        </Link>
+        <Link to="/find">
+          <Btn
+            btnText="아이디/비밀번호 찾으러 가기"
+            width="34rem"
+            fontsize="0.8rem"
+            type="submit"
+          ></Btn>
+        </Link>
       </div>
       <div>
         <Btn btnText="로그인" width="34rem" type="submit"></Btn>
