@@ -5,28 +5,83 @@ import { Link } from "react-router-dom";
 
 //components
 import { Btn } from "../components/atoms/Button";
+import { UnityItem } from "../components/UnityItem";
 
 export const UnityList = () => {
   return (
-    <>
-      <Link to="/unity1">
-        <Btn
-          btnText="Click Unity1"
-          color={theme.color.white}
-          width="11rem"
-          height="5rem"
-          fontsize="1.7rem"
-        />
-      </Link>
-      <Link to="/unity2">
-        <Btn
-          btnText="Click Unity2"
-          color={theme.color.white}
-          width="11rem"
-          height="5rem"
-          fontsize="1.7rem"
-        />
-      </Link>
-    </>
+    <ListContainer>
+      <UnityItem
+        width="20rem"
+        title="first unity map"
+        text="This is the first one."
+        link="/unity1"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="25rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="15rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="17rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="22rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="21rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="25rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="15rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+      <UnityItem
+        width="20rem"
+        title="second unity map"
+        text="This is the second one."
+        link="/unity2"
+        src="images/The Imaginarium (2).png"
+      />
+    </ListContainer>
   );
 };
+
+const ListContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;

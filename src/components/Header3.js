@@ -130,6 +130,7 @@ const StyledHeader = styled.header`
   width: 100%;
   opacity: 0.85;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -150,6 +151,9 @@ const StyledHeader = styled.header`
 
   img {
     height: 8rem;
+    /*:hover {
+      transform: rotateY(180deg);
+    }*/
   }
 
   div {
