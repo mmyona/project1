@@ -128,6 +128,7 @@ export const MainHeader = () => {
 
 const StyledHeader = styled.header`
   width: 100%;
+  opacity: 0.85;
   position: fixed;
   top: 0;
   left: 0;
