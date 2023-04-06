@@ -12,12 +12,14 @@ export const Signup = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [userInput, setUserInput] = useState({
     name: "",
+    id: "",
     email: "",
     password: "",
     passwordCheck: "",
   });
   const [inputErr, setInputErr] = useState({
     name: false,
+    id: false,
     email: false,
     password: false,
     passwordCheck: false,
@@ -44,6 +46,16 @@ export const Signup = () => {
     if (!userInput.name || !nameRegex.test(userInput.name)) {
       setInputErr((prevState) => {
         return { ...prevState, name: true };
+      });
+      return false;
+    }
+    return true;
+  };
+  const idValidCheck = () => {
+    const nameRegex = /^[a-zA-Z가-힣0-9]{3,}$/;
+    if (!userInput.id || !nameRegex.test(userInput.id)) {
+      setInputErr((prevState) => {
+        return { ...prevState, id: true };
       });
       return false;
     }
@@ -90,11 +102,13 @@ export const Signup = () => {
     emailValidCheck();
     passwordValidCheck();
     passwordSameCheck();
+    idValidCheck();
     if (
       nameValidCheck() &&
       emailValidCheck() &&
       passwordValidCheck() &&
-      passwordSameCheck()
+      passwordSameCheck() &&
+      idValidCheck
     ) {
       return true;
     }
@@ -152,10 +166,22 @@ export const Signup = () => {
             btnText="실명 인증"
             fontsize="0.8rem"
             margin="0"
-            width="34rem"
+            width="4rem"
             type="submit"
           />
         </Link>
+      </div>
+      <div>
+        <InputAuth
+          label="아이디"
+          type="id"
+          value={userInput.id}
+          onChange={handleInputChange}
+          id="id"
+          error={inputErr.id}
+          errmsg={inputErr.id && "특수문자 없이 3글자 이상 입력해주세요."}
+        />
+        {inputErr.overLap && <p>중복되는 아이디가 존재합니다.</p>}
       </div>
       <div>
         <InputAuth
@@ -202,7 +228,7 @@ export const Signup = () => {
           type="submit"
         />
       </Link>
-      <Btn btnText="확인" width="34rem" type="submit" />
+      <Btn btnText="확인" width="2rem" type="submit" />
     </Wrapper>
   );
 };
@@ -215,6 +241,7 @@ export const Wrapper = styled.form`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 
   input {
     margin: 0 auto;
