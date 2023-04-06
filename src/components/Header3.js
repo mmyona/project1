@@ -19,7 +19,7 @@ export const MainHeader = () => {
     if (isToggleOpen) setIsToggleOpen(!isToggleOpen); //토글 메뉴가 열려 있으면, 메뉴를 닫는다
   };
 
-  const isLogin = true;
+  const isLogin = null;
   const [searchTerm, setSearchTerm] = useState(""); //검색어
   const handleSearch = (e) => {
     e.preventDefault();
