@@ -26,16 +26,16 @@ export const UnityList = () => {
       />
       <UnityItem
         width="15rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
+        title="third unity map"
+        text="This is the third one."
+        link="/unity3"
         src="images/The Imaginarium (2).png"
       />
       <UnityItem
         width="17rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
+        title="forth unity map"
+        text="This is the forth one."
+        link="/unity4"
         src="images/The Imaginarium (2).png"
       />
       <UnityItem
