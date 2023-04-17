@@ -4,7 +4,6 @@ import theme from "../components/theme";
 import { Link } from "react-router-dom";
 
 //components
-import { Btn } from "../components/atoms/Button";
 import { UnityItem } from "../components/UnityItem";
 
 export const UnityList = () => {
@@ -41,8 +40,8 @@ export const UnityList = () => {
       <UnityItem
         width="22rem"
         title="second unity map"
-        text="This is the second one."
-        link="/unity2"
+        text="This is the fifth one."
+        link="/unity5"
         src="images/The Imaginarium (2).png"
       />
       <UnityItem
