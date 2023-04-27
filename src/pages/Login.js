@@ -7,15 +7,16 @@ import { InputAuth } from "../components/atoms/Input";
 import { Modal } from "../components/atoms/Modal";
 
 import { Wrapper } from "./Signup";
+import { Link } from "react-router-dom/dist";
 
 export const Login = () => {
   const [userInput, setUserInput] = useState({
-    email: "",
+    id: "",
     password: "",
   });
 
   const [inputErr, setInputErr] = useState({
-    email: false,
+    id: false,
     password: false,
     signIn: false,
   });
@@ -39,17 +40,16 @@ export const Login = () => {
     }));
   };
 
-  const emailValidCheck = () => {
-    const emailRegexp = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    if (!userInput.email || !emailRegexp.test(userInput.email)) {
+  const idValidCheck = () => {
+    const nameRegex = /^[a-zA-Z가-힣0-9]{3,}$/;
+    if (!userInput.id || !nameRegex.test(userInput.id)) {
       setInputErr((prevState) => {
-        return { ...prevState, email: true };
+        return { ...prevState, id: true };
       });
       return false;
     }
     return true;
   };
-
   const passwordValidCheck = () => {
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,}$/;
     if (!userInput.password || !passwordRegex.test(userInput.password)) {
@@ -62,9 +62,9 @@ export const Login = () => {
   };
 
   const validCheck = () => {
-    emailValidCheck();
+    idValidCheck();
     passwordValidCheck();
-    if (emailValidCheck() && passwordValidCheck()) {
+    if (idValidCheck() && passwordValidCheck()) {
       return true;
     }
     return false;
@@ -100,13 +100,11 @@ export const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     const isValid = validCheck();
     if (!isValid) {
       console.log("fail");
       return;
     }
-
     //login();
   };
 
@@ -115,13 +113,13 @@ export const Login = () => {
       {openModal && <Modal modalText="로그인 완료!" />}
       <div>
         <InputAuth
-          label="이메일"
-          type="email"
-          value={userInput.email}
+          label="아이디"
+          type="id"
+          value={userInput.id}
           onChange={handleInputChange}
-          id="email"
-          error={inputErr.email}
-          errmsg={inputErr.email && "올바른 이메일 형식으로 입력해주세요."}
+          id="id"
+          error={inputErr.id}
+          errmsg={inputErr.id && "특수문자 없이 3글자 이상 입력해주세요."}
         />
       </div>
       <div>
@@ -137,10 +135,28 @@ export const Login = () => {
             "비밀번호는 영문, 숫자, 특수기호를 포함한 8자 이상으로 입력해주세요."
           }
         />
-        {inputErr.signIn && <p>이메일 또는 비밀번호를 확인하세요.</p>}
+        {inputErr.signIn && <p>아이디 또는 비밀번호를 확인하세요.</p>}
+      </div>
+      <div className="w">
+        <Link to="/signup">
+          <Btn
+            btnText="가입한 계정이 없나요? 회원가입 하러가기"
+            width="17rem"
+            fontsize="0.8rem"
+            type="submit"
+          />
+        </Link>
+        <Link to="/find">
+          <Btn
+            btnText="아이디/비밀번호 찾으러 가기"
+            width="14rem"
+            fontsize="0.8rem"
+            type="submit"
+          />
+        </Link>
       </div>
       <div>
-        <Btn btnText="로그인" width="34rem" type="submit"></Btn>
+        <Btn btnText="로그인" width="3rem" type="submit" />
       </div>
     </Wrapper>
   );

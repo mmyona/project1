@@ -15,6 +15,9 @@ export const MainHeader = () => {
   const handleToggleOpen = () => {
     setIsToggleOpen(!isToggleOpen);
   };
+  const navToggleOpen = () => {
+    if (isToggleOpen) setIsToggleOpen(!isToggleOpen); //토글 메뉴가 열려 있으면, 메뉴를 닫는다
+  };
 
   const isLogin = null;
   const [searchTerm, setSearchTerm] = useState(""); //검색어
@@ -38,6 +41,7 @@ export const MainHeader = () => {
                 btnText="서비스 소개"
                 color={theme.color.white}
                 width="8rem"
+                onClick={navToggleOpen}
               />
             </Link>
           </li>
@@ -47,6 +51,7 @@ export const MainHeader = () => {
                 btnText="전시 둘러보기"
                 color={theme.color.white}
                 width="8rem"
+                onClick={navToggleOpen}
               />
             </Link>
           </li>
@@ -56,12 +61,18 @@ export const MainHeader = () => {
                 btnText="전시 의뢰하기"
                 color={theme.color.white}
                 width="8rem"
+                onClick={navToggleOpen}
               />
             </Link>
           </li>
           <li>
             <Link to="/center">
-              <Btn btnText="고객 센터" color={theme.color.white} width="8rem" />
+              <Btn
+                btnText="고객 센터"
+                color={theme.color.white}
+                width="8rem"
+                onClick={navToggleOpen}
+              />
             </Link>
           </li>
           <div className="searchInput">
@@ -76,18 +87,29 @@ export const MainHeader = () => {
           <li>
             {isLogin ? (
               <Link to="/mypage">
-                <Btn btnText="my page" color={theme.color.white} width="6rem" />
+                <Btn
+                  btnText="my page"
+                  color={theme.color.white}
+                  width="6rem"
+                  onClick={navToggleOpen}
+                />
               </Link>
             ) : (
               <div>
                 <Link to="/login">
-                  <Btn btnText="login" color={theme.color.white} width="6rem" />
+                  <Btn
+                    btnText="login"
+                    color={theme.color.white}
+                    width="6rem"
+                    onClick={navToggleOpen}
+                  />
                 </Link>
                 <Link to="/signup">
                   <Btn
                     btnText="signup"
                     color={theme.color.white}
                     width="6rem"
+                    onClick={navToggleOpen}
                   />
                 </Link>
               </div>
@@ -106,7 +128,9 @@ export const MainHeader = () => {
 
 const StyledHeader = styled.header`
   width: 100%;
+  opacity: 0.85;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
@@ -127,6 +151,9 @@ const StyledHeader = styled.header`
 
   img {
     height: 8rem;
+    /*:hover {
+      transform: rotateY(180deg);
+    }*/
   }
 
   div {

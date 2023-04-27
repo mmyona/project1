@@ -58,16 +58,16 @@ export const TwoBtnModal = (props) => {
 const ModalContainer = styled.div`
   width: 30rem;
   height: 20rem;
-  background: white;
+  white-space: pre-line;
   border-radius: 1.2rem;
-  box-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.6);
+  border: 0.5px solid ${theme.color.gray};
   padding: 10px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.8rem;
-  color: black;
+  color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
