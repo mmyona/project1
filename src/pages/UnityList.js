@@ -1,78 +1,59 @@
 import React from "react";
 import styled from "styled-components";
-import theme from "../components/theme";
-import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 
 //components
 import { UnityItem } from "../components/UnityItem";
 
 export const UnityList = () => {
+  const data = [
+    {
+      id: 1,
+      title: "unity1",
+      text: "The first",
+      src: "images/The Imaginarium (2).png",
+    },
+    {
+      id: 2,
+      title: "unity2",
+      text: "The second",
+      src: "images/The Imaginarium (2).png",
+    },
+    {
+      id: 3,
+      title: "unity3",
+      text: "The third",
+      src: "images/The Imaginarium (2).png",
+    },
+    {
+      id: 4,
+      title: "unity4",
+      text: "The forth",
+      src: "images/The Imaginarium (2).png",
+    },
+    {
+      id: 5,
+      title: "unity5",
+      text: "The fifth",
+      src: "images/The Imaginarium (2).png",
+    },
+  ];
+
   return (
-    <ListContainer>
-      <UnityItem
-        width="20rem"
-        title="first unity map"
-        text="This is the first one."
-        link="/unity1"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="25rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="15rem"
-        title="third unity map"
-        text="This is the third one."
-        link="/unity3"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="17rem"
-        title="forth unity map"
-        text="This is the forth one."
-        link="/unity4"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="22rem"
-        title="second unity map"
-        text="This is the fifth one."
-        link="/unity5"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="21rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="25rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="15rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
-        src="images/The Imaginarium (2).png"
-      />
-      <UnityItem
-        width="20rem"
-        title="second unity map"
-        text="This is the second one."
-        link="/unity2"
-        src="images/The Imaginarium (2).png"
-      />
-    </ListContainer>
+    <Container>
+      <Row>
+        {data.map((item) => (
+          <Col key={item.id} xs={7} md={6} lg={5} xl={4} xxl={3}>
+            <UnityItem
+              src={item.src}
+              title={item.title}
+              text={item.text}
+              link={`/${item.title}`}
+            />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 

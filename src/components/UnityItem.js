@@ -9,7 +9,6 @@ export const UnityItem = (props) => {
     <CContainer>
       <Card
         style={{
-          width: props.width || "30rem",
           border: `1px solid ${theme.color.gray}`,
           position: "relative",
           zIndex: "1",
@@ -30,4 +29,5 @@ export const UnityItem = (props) => {
 
 const CContainer = styled.div`
   padding: 1rem;
+  width: 20rem;
 `;
