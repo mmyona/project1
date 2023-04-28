@@ -42,4 +42,7 @@ const StyledBasicBtn = styled.button`
   font-size: ${(props) => props.fontsize || "1rem"};
   line-height: 1.9rem;
   color: ${(props) => props.color || "white"};
+  &:hover {
+    color: ${theme.color.gra_blue};
+  }
 `;
