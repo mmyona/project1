@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 
 //components
@@ -56,12 +55,3 @@ export const UnityList = () => {
     </Container>
   );
 };
-
-const ListContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-`;

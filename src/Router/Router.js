@@ -9,16 +9,16 @@ import { Signup } from "../pages/Signup";
 import { Info } from "../pages/Info";
 import { Request } from "../pages/Request";
 import { UnityList } from "../pages/UnityList";
-import { Unity2 } from "../pages/Unity2";
-import { Unity3 } from "../pages/Unity3";
-import { Unity4 } from "../pages/Unity4";
-import { Unity5 } from "../pages/Unity5";
 import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
 import { Certify } from "../pages/Certify";
 
 //unity components
-import { Unity1 } from "../pages/Unity1";
+import { Unity1 } from "../unityMaps/Unity1";
+import { Unity2 } from "../unityMaps/Unity2";
+import { Unity3 } from "../unityMaps/Unity3";
+import { Unity4 } from "../unityMaps/Unity4";
+import { Unity5 } from "../unityMaps/Unity5";
 
 export const Router = () => {
   return (
