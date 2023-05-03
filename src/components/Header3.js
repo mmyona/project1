@@ -20,11 +20,8 @@ export const MainHeader = () => {
     setActiveMenu(menuId);
     if (isToggleOpen) setIsToggleOpen(!isToggleOpen); //토글 메뉴가 열려 있으면, 메뉴를 닫는다
   };
-  const navToggleOpen = () => {
-    if (isToggleOpen) setIsToggleOpen(!isToggleOpen); //토글 메뉴가 열려 있으면, 메뉴를 닫는다
-  };
 
-  const isLogin = null;
+  const isLogin = true;
   const [searchTerm, setSearchTerm] = useState(""); //검색어
   const handleSearch = (e) => {
     e.preventDefault();

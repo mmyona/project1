@@ -51,6 +51,7 @@ export const Signup = () => {
     }
     return true;
   };
+
   const idValidCheck = () => {
     const nameRegex = /^[a-zA-Z가-힣0-9]{3,}$/;
     if (!userInput.id || !nameRegex.test(userInput.id)) {

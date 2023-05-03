@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 //props : 유저 이미지 파일 경로
-const Avatar = (props) => {
+export const Avatar = (props) => {
   return (
     <>
       <StyledAvatar width={props.width}>
@@ -18,5 +18,3 @@ const StyledAvatar = styled.div`
     border-radius: 50%;
   }
 `;
-
-export default Avatar;
