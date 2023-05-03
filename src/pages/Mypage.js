@@ -4,6 +4,7 @@ import { InputAuth } from "../components/atoms/Input";
 import styled from "styled-components";
 import { Avatar } from "../components/atoms/Avatar";
 import { Wrapper } from "./Signup";
+import { ImageUploader } from "../components/ImageUploader";
 
 export const Mypage = () => {
   const [user, setUser] = useState({
@@ -14,7 +15,7 @@ export const Mypage = () => {
   });
 
   const [editing, setEditing] = useState(false);
-  const [profileImg, setProfileImg] = useState(null);
+  const [image, setImage] = useState(null);
 
   const handleEditClick = () => {
     setEditing(true);
@@ -30,15 +31,6 @@ export const Mypage = () => {
     setEditing(false);
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      setProfileImg(reader.result);
-    };
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({
@@ -49,13 +41,12 @@ export const Mypage = () => {
 
   return (
     <MContainer>
-      <h3>마이페이지</h3>
       {editing ? (
         <Wrapper onSubmit={handleSubmit}>
-          <Avatar width="10rem" src={profileImg} />
+          <h3>마이페이지</h3>
           <div>
             프로필 이미지
-            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <ImageUploader onImageChange={(img) => setImage(img)} />
           </div>
           <div>
             <InputAuth
@@ -86,7 +77,7 @@ export const Mypage = () => {
           </div>
           <div>
             <InputAuth
-              label="전화번호"
+              label="전화 번호"
               type="tel"
               value={user.phone}
               onChange={handleInputChange}
@@ -106,11 +97,12 @@ export const Mypage = () => {
         </Wrapper>
       ) : (
         <Wrapper>
-          <Avatar width="10rem" src={profileImg} />
-          <p>이름: {user.name}</p>
-          <p>아이디: {user.id}</p>
-          <p>이메일: {user.email}</p>
-          <p>전화번호: {user.phone}</p>
+          <h3>마이페이지</h3>
+          <Avatar width="10rem" />
+          <p>이름 : {user.name}</p>
+          <p>아이디 : {user.id}</p>
+          <p>이메일 : {user.email}</p>
+          <p>전화 번호 : {user.phone}</p>
           <Btn
             btnText="수정"
             width="6rem"
