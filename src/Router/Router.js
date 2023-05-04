@@ -19,6 +19,7 @@ import { Unity2 } from "../unityMaps/Unity2";
 import { Unity3 } from "../unityMaps/Unity3";
 import { Unity4 } from "../unityMaps/Unity4";
 import { Unity5 } from "../unityMaps/Unity5";
+import { UnityInfo } from "../pages/UnityInfo";
 
 export const Router = () => {
   return (
@@ -28,6 +29,7 @@ export const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/list/:unityId" element={<UnityInfo />} />
         <Route path="/unity1" element={<Unity1 />} />
         <Route path="/unity2" element={<Unity2 />} />
         <Route path="/unity3" element={<Unity3 />} />

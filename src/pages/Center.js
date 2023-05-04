@@ -32,6 +32,6 @@ const CenterContainer = styled.div`
   align-items: center;
 
   width: 100%;
-  max-width: 2000px; /* Nav 컴포넌트의 최대 너비 */
+  max-width: 960px; /* Nav 컴포넌트의 최대 너비 */
   margin: 0 auto;
 `;
