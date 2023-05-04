@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
+import styled from "styled-components";
 
 //components
 import { UnityItem } from "../components/UnityItem";
@@ -56,12 +56,3 @@ export const UnityList = () => {
     </Container>
   );
 };
-
-const ListContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-`;
