@@ -146,7 +146,9 @@ export const MainHeader = () => {
 const StyledHeader = styled.header`
   width: 100%;
   opacity: 0.85;
+  opacity: 0.85;
   position: fixed;
+  z-index: 100;
   z-index: 100;
   top: 0;
   left: 0;
