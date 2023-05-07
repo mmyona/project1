@@ -11,7 +11,13 @@ export const Footer = () => {
 };
 
 const FooterContainer = styled.div`
-  padding: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 0.8rem;
   p {
     color: ${theme.color.gray};
