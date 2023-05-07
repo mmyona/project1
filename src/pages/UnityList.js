@@ -48,7 +48,7 @@ export const UnityList = () => {
               src={item.src}
               title={item.title}
               text={item.text}
-              link={`/${item.title}`}
+              link={`/list/${item.id}`}
             />
           </Col>
         ))}
