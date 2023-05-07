@@ -39,6 +39,7 @@ const CenterContainer = styled.div`
   &&& .nav-link {
     color: ${theme.color.white};
     background-color: ${theme.color.navy};
+    border-bottom: none;
 
     :hover {
       color: ${theme.color.gra_blue};

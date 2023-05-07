@@ -52,9 +52,9 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/list">
+          <Link to="/publist">
             <Btn
-              btnText="전시 둘러보기"
+              btnText="public 전시"
               color={
                 activeMenu !== 2 ? theme.color.white : theme.color.gra_blue
               }
@@ -64,9 +64,9 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/request">
+          <Link to="/privlist">
             <Btn
-              btnText="전시 의뢰하기"
+              btnText="private 전시"
               color={
                 activeMenu !== 3 ? theme.color.white : theme.color.gra_blue
               }

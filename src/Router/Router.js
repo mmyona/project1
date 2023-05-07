@@ -35,8 +35,8 @@ export const Router = () => {
         <Route path="/unity3" element={<Unity3 />} />
         <Route path="/unity4" element={<Unity4 />} />
         <Route path="/unity5" element={<Unity5 />} />
-        <Route path="/list" element={<UnityList />} />
-        <Route path="/request" element={<Request />} />
+        <Route path="/publist" element={<UnityList />} />
+        <Route path="/privlist" element={<UnityList />} />
         <Route path="/info" element={<Info />} />
         <Route path="/center" element={<Center />} />
         <Route path="/find" element={<Find />} />
