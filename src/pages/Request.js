@@ -4,6 +4,7 @@ import theme from "../components/theme";
 import { Modal } from "../components/atoms/Modal";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { CenterMenu } from "../components/CenterMenu";
 
 export const Request = () => {
   const isLogin = true;
@@ -26,6 +27,7 @@ export const Request = () => {
 
   return (
     <pageWrapper>
+      <CenterMenu />
       {createModal && (
         <Modal
           modalText={"로그인을 먼저 진행해주세요 로그인 페이지로 이동합니다 "}
