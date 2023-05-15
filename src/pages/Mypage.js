@@ -110,6 +110,20 @@ export const Mypage = () => {
             type="submit"
             onClick={handleEditClick}
           />
+          <div>
+            <Btn
+              btnText="로그아웃"
+              width="8rem"
+              fontsize="0.8rem"
+              type="submit"
+            />
+            <Btn
+              btnText="회원 탈퇴"
+              width="8rem"
+              fontsize="0.8rem"
+              type="submit"
+            />
+          </div>
         </Wrapper>
       )}
     </MContainer>

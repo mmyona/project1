@@ -6,13 +6,14 @@ export const InputAuth = (props) => {
   return (
     <Wrapper>
       <span>{props.label}</span>
-      <AuthInput
+      <AuthTextarea
         type={props.type}
         value={props.value}
         onChange={props.onChange}
         error={props.error}
         id={props.id}
         width={props.width}
+        height={props.height}
       />
       <p>{props.errmsg}</p>
     </Wrapper>
@@ -42,20 +43,16 @@ const StyledInput = styled.input`
   padding-left: 1rem;
 `;
 
-const AuthInput = styled.input`
+const AuthTextarea = styled.textarea`
   background: transparent;
   width: ${(props) => props.width || "34rem"};
-  height: 2.5rem;
+  height: ${(props) => props.height || "2.5rem"};
   border-radius: 0.8rem;
   font-size: 1rem;
   padding-left: 1rem;
+
   border: ${(props) =>
     `0.1rem solid ${props.error ? theme.color.red : theme.color.gray}`};
-  :-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px ${theme.color.navy} inset;
-    box-shadow: 0 0 0 1000px ${theme.color.navy} inset;
-    -webkit-text-fill-color: white;
-  }
 `;
 
 const Wrapper = styled.div`

@@ -31,7 +31,6 @@ export const Router = () => {
       <Routes className="margin">
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/kakaoLogin" element={<KLogin />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/list/:unityId" element={<UnityInfo />} />
