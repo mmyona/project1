@@ -23,7 +23,7 @@ export const MainHeader = () => {
   return (
     <StyledHeader>
       <Link to={"/"} className="nav-logo-link">
-        <img alt="logo" src="images/The Imaginarium (2).png" />
+        <img alt="logo" src="/images/The Imaginarium (2).png" />
       </Link>
       <NavManu isToggleOpen={isToggleOpen}>
         <li>
