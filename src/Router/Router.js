@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { Suspense } from "react";
 
 //routing components
 import { Home } from "../pages/Home";
@@ -23,34 +24,48 @@ import { Unity3 } from "../unityMaps/Unity3";
 import { Unity4 } from "../unityMaps/Unity4";
 import { Unity5 } from "../unityMaps/Unity5";
 import { UnityInfo } from "../pages/UnityInfo";
-import { KLogin } from "../pages/KLogin";
+import { Loading } from "../components/Loading";
+import { MainHeader } from "../components/Header3";
+import { Footer } from "../components/Footer";
 
-export const Router = () => {
+const Overlaps = ({ hasHeader, hasFooter }) => {
   return (
-    <Container>
-      <Routes className="margin">
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/mypage" element={<Mypage />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/list/:unityId" element={<UnityInfo />} />
-        <Route path="/unity1" element={<Unity1 />} />
-        <Route path="/unity2" element={<Unity2 />} />
-        <Route path="/unity3" element={<Unity3 />} />
-        <Route path="/unity4" element={<Unity4 />} />
-        <Route path="/unity5" element={<Unity5 />} />
-        <Route path="/publist" element={<UnityList />} />
-        <Route path="/privlist" element={<UnityList />} />
-        <Route path="/info" element={<Info />} />
-        <Route path="/center" element={<Center />} />
-        <Route path="/qa" element={<Questions />} />
-        <Route path="/request" element={<Request />} />
-        <Route path="/bugs" element={<Bugs />} />
-        <Route path="/find" element={<Find />} />
-        <Route path="/certify" element={<Certify />} />
-      </Routes>
-    </Container>
+    <>
+      {hasHeader && <MainHeader />}
+      <Outlet />
+      {hasFooter && <Footer />}
+    </>
   );
 };
 
-const Container = styled.div``;
+export const Router = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <Routes className="margin">
+        <Route element={<Overlaps hasHeader={true} hasFooter={true} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/list/:unityId" element={<UnityInfo />} />
+          <Route path="/publist" element={<UnityList />} />
+          <Route path="/privlist" element={<UnityList />} />
+          <Route path="/info" element={<Info />} />
+          <Route path="/center" element={<Center />} />
+          <Route path="/qa" element={<Questions />} />
+          <Route path="/request" element={<Request />} />
+          <Route path="/bugs" element={<Bugs />} />
+          <Route path="/find" element={<Find />} />
+          <Route path="/certify" element={<Certify />} />
+        </Route>
+        <Route element={<Overlaps hasHeader={false} hasFooter={false} />}>
+          <Route path="/unity1" element={<Unity1 />} />
+          <Route path="/unity2" element={<Unity2 />} />
+          <Route path="/unity3" element={<Unity3 />} />
+          <Route path="/unity4" element={<Unity4 />} />
+          <Route path="/unity5" element={<Unity5 />} />
+        </Route>
+      </Routes>
+    </Suspense>
+  );
+};

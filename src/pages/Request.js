@@ -59,22 +59,35 @@ export const Request = () => {
     }
     return true;
   };
-  const contentValidCheck = () => {
-    if (userInput.content.length < 20) {
+  const titleValidCheck = () => {
+    const nameRegex = /^[a-zA-Z가-힣0-9]{3,}$/;
+    if (!userInput.title || !nameRegex.test(userInput.title)) {
       setInputErr((prevState) => {
-        return { ...prevState, id: true };
+        return { ...prevState, title: true };
       });
       return false;
     }
     return true;
   };
+  const contentValidCheck = () => {
+    if (userInput.content.length < 20) {
+      setInputErr((prevState) => {
+        return { ...prevState, content: true };
+      });
+      return false;
+    }
+    return true;
+  };
+
   useEffect(() => {
     handleCreate();
   }, []);
 
   const validCheck = () => {
     idValidCheck();
-    if (idValidCheck() && contentValidCheck()) {
+    titleValidCheck();
+    contentValidCheck();
+    if (idValidCheck() && titleValidCheck() && contentValidCheck()) {
       return true;
     }
     return false;
@@ -131,8 +144,8 @@ export const Request = () => {
         type="req"
         value={userInput.req}
         onChange={handleInputChange}
-        id="content"
-        height="20rem"
+        id="req"
+        height="10rem"
       />
       <Btn btnText="의뢰하기" width="5rem" type="submit" />
     </Wrapper>

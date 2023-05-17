@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import theme from "../components/theme";
 import { Btn } from "../components/atoms/Button";
+import { Link } from "react-router-dom";
 
 export const UnityInfo = () => {
   return (
     <InfoContainer>
       <h2>Title</h2>
       <p>content</p>
-      <Btn btnText="전시 입장" width="6rem" type="submit" />
+      <Link to="/unity1">
+        <Btn btnText="전시 입장" width="6rem" type="submit" />
+      </Link>
     </InfoContainer>
   );
 };
