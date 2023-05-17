@@ -45,4 +45,7 @@ const StyledBasicBtn = styled.button`
   &:hover {
     color: ${theme.color.gra_blue};
   }
+  &&&.active {
+    color: ${theme.color.gra_blue};
+  }
 `;

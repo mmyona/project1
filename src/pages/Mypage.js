@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Avatar } from "../components/atoms/Avatar";
 import { Wrapper } from "./Signup";
 import { ImageUploader } from "../components/ImageUploader";
+import { KLogin } from "../components/KLogin";
 
 export const Mypage = () => {
   const [user, setUser] = useState({
@@ -110,6 +111,7 @@ export const Mypage = () => {
             type="submit"
             onClick={handleEditClick}
           />
+          <KLogin />
         </Wrapper>
       )}
     </MContainer>

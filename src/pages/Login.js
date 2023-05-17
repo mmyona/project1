@@ -7,6 +7,7 @@ import { InputAuth } from "../components/atoms/Input";
 import { Modal } from "../components/atoms/Modal";
 
 import { Wrapper } from "./Signup";
+
 import { Link } from "react-router-dom/dist";
 
 export const Login = () => {
@@ -111,6 +112,7 @@ export const Login = () => {
   return (
     <Wrapper onSubmit={onSubmit}>
       {openModal && <Modal modalText="로그인 완료!" />}
+
       <div>
         <InputAuth
           label="아이디"

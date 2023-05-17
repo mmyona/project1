@@ -17,7 +17,11 @@ export const UnityItem = (props) => {
         <Card.Img variant="top" src={props.src} />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
-          <Card.Text>{props.text}</Card.Text>
+          <Card.Text>
+            {props.text.length < 70
+              ? props.text
+              : props.text.substring(0, 70) + "..."}
+          </Card.Text>
           <Link to={props.link}>
             <Btn btnText="관람" width="2rem" type="submit" />
           </Link>
