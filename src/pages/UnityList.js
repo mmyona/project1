@@ -11,19 +11,19 @@ export const UnityList = () => {
       id: 1,
       title: "unity1",
       text: "The first",
-      src: "images/The Imaginarium (2).png",
+      src: "images/chess.png",
     },
     {
       id: 2,
       title: "unity2",
       text: "The second",
-      src: "images/The Imaginarium (2).png",
+      src: "images/park.png",
     },
     {
       id: 3,
       title: "unity3",
       text: "The third",
-      src: "images/The Imaginarium (2).png",
+      src: "images/plaza.png",
     },
     {
       id: 4,

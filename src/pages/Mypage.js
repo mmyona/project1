@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Avatar } from "../components/atoms/Avatar";
 import { Wrapper } from "./Signup";
 import { ImageUploader } from "../components/ImageUploader";
+import { KLogin } from "../components/KLogin";
 
 export const Mypage = () => {
   const [user, setUser] = useState({
@@ -110,20 +111,7 @@ export const Mypage = () => {
             type="submit"
             onClick={handleEditClick}
           />
-          <div>
-            <Btn
-              btnText="로그아웃"
-              width="8rem"
-              fontsize="0.8rem"
-              type="submit"
-            />
-            <Btn
-              btnText="회원 탈퇴"
-              width="8rem"
-              fontsize="0.8rem"
-              type="submit"
-            />
-          </div>
+          <KLogin />
         </Wrapper>
       )}
     </MContainer>
