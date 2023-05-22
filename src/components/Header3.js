@@ -28,22 +28,46 @@ export const MainHeader = () => {
       <NavManu isToggleOpen={isToggleOpen}>
         <li>
           <Link to="/info">
-            <Btn btnText="서비스 소개" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="서비스 소개"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+              fontsize="1.2rem"
+            />
           </Link>
         </li>
         <li>
           <Link to="/publist">
-            <Btn btnText="public 전시" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="public 전시"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+              fontsize="1.2rem"
+            />
           </Link>
         </li>
         <li>
           <Link to="/privlist">
-            <Btn btnText="private 전시" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="private 전시"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+              fontsize="1.2rem"
+            />
           </Link>
         </li>
         <li>
           <Link to="/center">
-            <Btn btnText="고객 센터" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="고객 센터"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+              fontsize="1.2rem"
+            />
           </Link>
         </li>
         <div className="searchInput">
@@ -57,7 +81,13 @@ export const MainHeader = () => {
         </div>
         <li>
           <Link to="/mypage">
-            <Btn btnText="my page" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="my page"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+              fontsize="1.2rem"
+            />
           </Link>
         </li>
       </NavManu>

@@ -47,7 +47,6 @@ export const Router = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/list/:unityId" element={<UnityInfo />} />
           <Route path="/publist" element={<UnityList />} />
           <Route path="/privlist" element={<UnityList />} />
           <Route path="/info" element={<Info />} />
@@ -57,6 +56,7 @@ export const Router = () => {
           <Route path="/bugs" element={<Bugs />} />
           <Route path="/find" element={<Find />} />
           <Route path="/certify" element={<Certify />} />
+          <Route path="/list/:unityId" element={<UnityInfo />} />
         </Route>
         <Route element={<Overlaps hasHeader={false} hasFooter={false} />}>
           <Route path="/unity1" element={<Unity1 />} />

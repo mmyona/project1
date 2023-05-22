@@ -53,7 +53,11 @@ export const KLogin = () => {
   const sendTokenToServer = (token) => {
     // 서버에게 토큰을 전송하는 코드 작성
     axios
-      .post("/api/login", { token }, { withCredentials: true })
+      .post(
+        `15.164.82.76/api/oauth/kakao/login?access_token=${token}`,
+        { token },
+        { withCredentials: true }
+      )
       .then((response) => {
         // 서버 응답 처리
         console.log(response);
@@ -69,7 +73,7 @@ export const KLogin = () => {
     window.Kakao.Auth.logout(() => {
       // 서버에 로그아웃 요청 보내기
       axios
-        .post("/api/logout", null, { withCredentials: true })
+        .post("", null, { withCredentials: true })
         .then((response) => {
           // 서버 응답 처리
           console.log(response);
