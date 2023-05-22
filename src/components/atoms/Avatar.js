@@ -16,5 +16,6 @@ const StyledAvatar = styled.div`
     width: ${(props) => props.width || "3rem"};
     height: ${(props) => props.width || "3rem"};
     border-radius: 50%;
+    border: 0.1px solid white;
   }
 `;

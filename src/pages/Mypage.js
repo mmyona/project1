@@ -44,7 +44,7 @@ export const Mypage = () => {
     <MContainer>
       {editing ? (
         <Wrapper onSubmit={handleSubmit}>
-          <h3>마이페이지</h3>
+          <h2>My Page</h2>
           <div>
             프로필 이미지
             <ImageUploader onImageChange={(img) => setImage(img)} />
@@ -98,7 +98,7 @@ export const Mypage = () => {
         </Wrapper>
       ) : (
         <Wrapper>
-          <h3>마이페이지</h3>
+          <h2>My Page</h2>
           <Avatar width="10rem" />
           <p>이름 : {user.name}</p>
           <p>아이디 : {user.id}</p>
@@ -122,5 +122,12 @@ const MContainer = styled.div`
   padding: 1rem;
   p {
     color: white;
+  }
+  h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    border-bottom: 0.1px solid white;
+    margin-bottom: 2rem;
   }
 `;
