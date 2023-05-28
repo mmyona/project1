@@ -23,7 +23,7 @@ The Imaginarium은 쉽게 말하자면 웹 사이트를 이용한 온라인 가�
   
 <h2>backend</h2>
    <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"> 
-  
+  <img src="https://img.shields.io/badge/nginx-#7E4DD2?style=for-the-badge&logo=nginx&logoColor=white"> 
   
   <h2>unity</h2>
   <img src="https://img.shields.io/badge/unity-003545?style=for-the-badge&logo=unity&logoColor=white"> 
