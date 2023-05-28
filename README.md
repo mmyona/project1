@@ -12,3 +12,13 @@ The Imaginarium은 쉽게 말하자면 웹 사이트를 이용한 온라인 가�
 
 # Userflow
 ![userflow drawio](https://user-images.githubusercontent.com/90781929/230849015-15c2fa26-61dd-404c-834d-31172504cc56.png)
+
+# skills
+### frontend
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+  
+### unity
+
+### backend
