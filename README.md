@@ -15,7 +15,7 @@ The Imaginarium은 쉽게 말하자면 웹 사이트를 이용한 온라인 가�
 
 <div align=center><h1>📚 STACKS</h1></div>
 <div align=center> 
-  <h2>frontend</h2>
+  <p>frontend</p>
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
   <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
@@ -24,15 +24,15 @@ The Imaginarium은 쉽게 말하자면 웹 사이트를 이용한 온라인 가�
   <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=white"> 
   <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"> 
   
-<h2>backend</h2>
+<p>backend</p>
    <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"> 
   <img src="https://img.shields.io/badge/nginx-7E4DD2?style=for-the-badge&logo=nginx&logoColor=white"> 
   
-  <h2>unity</h2>
+  <p>unity</p>
   <img src="https://img.shields.io/badge/unity-003545?style=for-the-badge&logo=unity&logoColor=white"> 
   <img src="https://img.shields.io/badge/sketchup-005F9E?style=for-the-badge&logo=sketchup&logoColor=white"> 
   
-  <h2>deploy</h2>
+  <p>deploy</p>
   <img src="https://img.shields.io/badge/amazonaws-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white">
   <img src="https://img.shields.io/badge/amazonEC2-FF9900?style=for-the-badge&logo=amazonEC2&logoColor=white">
   </div>
