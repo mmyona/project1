@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CenterMenu } from "../components/CenterMenu";
 import { InputAuth } from "../components/atoms/Input";
-import { Wrapper } from "./Signup";
+import { Wrapper } from "./Login";
 
 export const Request = () => {
   const isLogin = true;

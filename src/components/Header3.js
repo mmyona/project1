@@ -76,6 +76,16 @@ export const MainHeader = () => {
           />
         </div>
         <li>
+          <Link to="/login">
+            <Btn
+              btnText="login"
+              width="6rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
+          </Link>
+        </li>
+        <li>
           <Link to="/mypage">
             <Btn
               btnText="my page"

@@ -1,17 +1,14 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import styled from "styled-components";
 import { Suspense } from "react";
 
 //routing components
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Mypage } from "../pages/Mypage";
-import { Signup } from "../pages/Signup";
 import { Info } from "../pages/Info";
 import { Request } from "../pages/Request";
 import { Questions } from "../pages/Questions";
 import { Bugs } from "../pages/Bugs";
-import { CenterMenu } from "../components/CenterMenu";
 import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
 import { Certify } from "../pages/Certify";
@@ -46,7 +43,6 @@ export const Router = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/publist" element={<UnityList />} />
           <Route path="/privlist" element={<UnityList />} />
           <Route path="/info" element={<Info />} />

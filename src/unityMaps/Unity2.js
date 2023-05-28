@@ -21,8 +21,19 @@ export const Unity2 = () => {
   }, [detachAndUnloadImmediate]);
 
   return (
-    <div>
-      <Unity unityProvider={unityProvider} style={{ height: "500px" }} />
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "fixed",
+        top: 0,
+        left: 0,
+      }}
+    >
+      <Unity
+        unityProvider={unityProvider}
+        style={{ width: "100%", height: "100%" }}
+      />
     </div>
   );
 };

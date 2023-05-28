@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import theme from "../components/theme";
 import { Btn } from "../components/atoms/Button";
+import { Link } from "react-router-dom";
 
 export const Info = () => {
   return (
@@ -53,13 +54,16 @@ export const Info = () => {
         </p>
         <img alt="metaverse" src="images/15.png" />
       </div>
-      <Btn
-        btnText="전시 둘러보기"
-        width="10rem"
-        type="submit"
-        fontFamily="Bebas Neue"
-        fontsize="1.4rem"
-      />
+      <Link to="/publist">
+        <Btn
+          btnText="look around"
+          width="10rem"
+          type="submit"
+          fontFamily="Bebas Neue"
+          fontsize="1.8rem"
+          margin="0 0 2rem  0"
+        />
+      </Link>
     </InfoContainer>
   );
 };
@@ -72,6 +76,7 @@ const InfoContainer = styled.div`
   justify-content: center;
 p{
   line-height:2rem;
+  padding:1rem;
 }
 h2 {
   font-family: "Bebas Neue", sans-serif;
