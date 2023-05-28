@@ -10,7 +10,7 @@ The Imaginarium은 쉽게 말하자면 웹 사이트를 이용한 온라인 가�
 
 웹 사이트를 통하여 쉽게 서비스에 접속이 가능하며, 온라인으로 손쉽게 전시를 관람할 수 있다.
 
-# Userflow
+### Userflow
 ![userflow drawio](https://user-images.githubusercontent.com/90781929/230849015-15c2fa26-61dd-404c-834d-31172504cc56.png)
 
 <div align=center><h1>📚 STACKS</h1></div>
