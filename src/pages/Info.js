@@ -76,7 +76,6 @@ const InfoContainer = styled.div`
   justify-content: center;
 p{
   line-height:2rem;
-  padding:1rem;
 }
 h2 {
   font-family: "Bebas Neue", sans-serif;

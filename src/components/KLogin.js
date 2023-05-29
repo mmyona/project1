@@ -36,7 +36,6 @@ export const KLogin = () => {
         console.log(error); // 에러 처리
       },
     });
-    // 서버에게 token 넘겨주기
     localStorage.setItem("authorization", res.response.access_token);
     localStorage.setItem("userId", res.profile.id);
     sendTokenToServer(accessToken);
@@ -62,13 +61,10 @@ export const KLogin = () => {
       localStorage.removeItem("authorization");
       localStorage.removeItem("userId");
       setIsKakaoLoggedin(false);
-      //setAccessToken("");
-      //setRefreshToken("");
     }
   };
 
   const sendTokenToServer = (token) => {
-    // 서버에게 토큰을 전송하는 코드 작성
     axios
       .post(
         `${process.env.REACT_APP_SERVER_URL}/api/oauth/kakao/login?access_token=${token}`,
@@ -80,10 +76,9 @@ export const KLogin = () => {
         }
       )
       .then((response) => {
-        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
+        console.log(response.data);
       })
       .catch((error) => {
-        // 에러 처리
         console.log(error);
       });
   };
@@ -101,10 +96,9 @@ export const KLogin = () => {
         }
       )
       .then((response) => {
-        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
+        console.log(response.data);
       })
       .catch((error) => {
-        // 에러 처리
         console.log(error);
       });
   };

@@ -56,7 +56,6 @@ export const Mypage = () => {
         setUser(userData);
       }
     } catch (error) {
-      console.log(accessToken);
       console.error(error);
     }
   };
