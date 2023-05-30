@@ -6,7 +6,6 @@ import { Btn } from "./atoms/Button";
 
 export const KLogin = () => {
   const [isKakaoLoggedin, setIsKakaoLoggedin] = useState(false);
-  const [id, setId] = useState("");
   /*const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
   const [provider, setProvider] = useState("kakao");*/
@@ -31,12 +30,17 @@ export const KLogin = () => {
       success: function (response) {
         // const { nickname, profile_image } = response.properties;
         // 닉네임과 프로필 사진 URL을 사용할 수 있습니다.
+        localStorage.setItem("nickname", response.properties.nickname);
+        localStorage.setItem(
+          "profile_image",
+          response.properties.profile_image
+        );
       },
       fail: function (error) {
         console.log(error); // 에러 처리
       },
     });
-    localStorage.setItem("authorization", res.response.access_token);
+    localStorage.setItem("authorization", accessToken);
     localStorage.setItem("userId", res.profile.id);
     sendTokenToServer(accessToken);
   };
@@ -51,7 +55,7 @@ export const KLogin = () => {
     sendServerToLogout(localStorage.getItem("authorization"));
     if (window.Kakao.Auth.getAccessToken()) {
       window.Kakao.API.request({
-        url: "/v1/user/unlink",
+        url: "/v1/user/logout",
         success: function (response) {},
         fail: function (error) {
           console.log(error);

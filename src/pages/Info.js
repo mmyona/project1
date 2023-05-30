@@ -80,7 +80,7 @@ p{
 h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size:2.5rem;
-  line-height:5rem;
+  line-height:7rem;
   border-bottom:0.1px solid white;
   margin-bottom:2rem;
 }

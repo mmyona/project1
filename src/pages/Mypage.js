@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Btn } from "../components/atoms/Button";
 import { InputAuth } from "../components/atoms/Input";
 import styled from "styled-components";
@@ -8,15 +8,11 @@ import { ImageUploader } from "../components/ImageUploader";
 import axios from "axios";
 
 export const Mypage = () => {
-  const [user, setUser] = useState({
-    name: "홍길동",
-    id: "hyon2001",
-    email: "hong@example.com",
-    phone: "010-1234-5678",
-  });
-
+  const [name, setName] = useState(localStorage.getItem("nickname"));
+  const [email, setEmail] = useState(localStorage.getItem("email"));
+  const [phone, setPhone] = useState(localStorage.getItem("phone"));
   const [editing, setEditing] = useState(false);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(localStorage.getItem("profile_image"));
 
   const handleEditClick = () => {
     setEditing(true);
@@ -26,88 +22,47 @@ export const Mypage = () => {
     setEditing(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // 폼 데이터를 서버로 전송하는 로직
-    setEditing(false);
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+    localStorage.setItem("nickname", name);
   };
-
-  const getUserData = async () => {
-    const accessToken = localStorage.getItem("authorization");
-    const userId = localStorage.getItem("userId");
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_SERVER_URL}/api/user/find?userid=${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-          withCredentials: true,
-        }
-      );
-
-      if (response.status === 200) {
-        const userData = {
-          name: response.data.nickname,
-          id: response.data.id,
-          email: response.data.email ? response.data.email : "",
-          phone: "",
-        };
-        setUser(userData);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+    localStorage.setItem("email", email);
   };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
+  const handleChangePhone = (e) => {
+    setPhone(e.target.value);
+    localStorage.setItem("phone", phone);
   };
 
   return (
     <MContainer>
-      <Btn
-        btnText="user data loading"
-        width="8rem"
-        fontsize="0.8rem"
-        type="submit"
-        onClick={getUserData}
-      />
       {editing ? (
-        <Wrapper onSubmit={handleSubmit}>
+        <Wrapper>
           <h2>My Page</h2>
           <div>
             프로필 이미지
-            <ImageUploader onImageChange={(img) => setImage(img)} />
+            <ImageUploader
+              onImageChange={(img) =>
+                localStorage.setItem("profile_image", img)
+              }
+            />
           </div>
           <div>
             <InputAuth
               label="이름"
               type="name"
-              value={user.name}
-              onChange={handleInputChange}
+              value={name}
+              onChange={handleChangeName}
               id="name"
-            />
-          </div>
-          <div>
-            <InputAuth
-              label="아이디"
-              type="id"
-              value={user.id}
-              onChange={handleInputChange}
-              id="id"
             />
           </div>
           <div>
             <InputAuth
               label="이메일"
               type="email"
-              value={user.email}
-              onChange={handleInputChange}
+              value={email}
+              onChange={handleChangeEmail}
               id="email"
             />
           </div>
@@ -115,8 +70,8 @@ export const Mypage = () => {
             <InputAuth
               label="전화 번호"
               type="tel"
-              value={user.phone}
-              onChange={handleInputChange}
+              value={phone}
+              onChange={handleChangePhone}
               id="tel"
             />
           </div>
@@ -126,7 +81,7 @@ export const Mypage = () => {
               btnText="취소"
               width="6rem"
               fontsize="0.8rem"
-              type="submit"
+              type="button"
               onClick={handleCancelClick}
             />
           </div>
@@ -134,16 +89,15 @@ export const Mypage = () => {
       ) : (
         <Wrapper>
           <h3>my page</h3>
-          <Avatar width="10rem" />
-          <p>이름 : {user.name}</p>
-          <p>아이디 : {user.id}</p>
-          <p>이메일 : {user.email}</p>
-          <p>전화 번호 : {user.phone}</p>
+          <Avatar width="10rem" src={image} />
+          <p>이름 : {name}</p>
+          <p>이메일 : {email}</p>
+          <p>전화 번호 : {phone}</p>
           <Btn
             btnText="수정"
             width="6rem"
             fontsize="0.8rem"
-            type="submit"
+            type="button"
             onClick={handleEditClick}
           />
         </Wrapper>
