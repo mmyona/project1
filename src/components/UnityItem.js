@@ -16,14 +16,21 @@ export const UnityItem = (props) => {
       >
         <Card.Img variant="top" src={props.src} />
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
+          <CustomCardTitle>{props.title}</CustomCardTitle>
           <Card.Text>
             {props.text.length < 70
               ? props.text
-              : props.text.substring(0, 70) + "..."}
+              : props.text.substring(0, 70) + " . . . "}
           </Card.Text>
           <Link to={props.link}>
-            <Btn btnText="관람" width="2rem" type="submit" />
+            <Btn
+              btnText="Enter"
+              width="4rem"
+              type="submit"
+              fontFamily="Bebas Neue"
+              fontsize="1.4rem"
+              color={theme.color.gray}
+            />
           </Link>
         </Card.Body>
       </Card>
@@ -34,4 +41,9 @@ export const UnityItem = (props) => {
 const CContainer = styled.div`
   padding: 1rem;
   width: 20rem;
+`;
+
+const CustomCardTitle = styled(Card.Title)`
+  font-size: 1.8rem;
+  font-family: "Bebas Neue", sans-serif;
 `;

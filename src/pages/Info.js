@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import theme from "../components/theme";
+import { Btn } from "../components/atoms/Button";
+import { Link } from "react-router-dom";
 
 export const Info = () => {
   return (
@@ -25,7 +27,7 @@ export const Info = () => {
         <img alt="metaverse" src="images/16.png" />
       </div>
       <div>
-        <h2>차별화 및 특장점</h2>
+        <h2>Our features</h2>
         <p>
           아티스트들이 저렴하게 전시 공간을 구할 수 있으며, 사용자들은 시공간의
           제약 없이 작품 관람 가능
@@ -38,7 +40,7 @@ export const Info = () => {
         <img alt="metaverse" src="images/13.png" />
       </div>
       <div>
-        <h2>추후 활용 방안 및 기대 효과</h2>
+        <h2>Expectation</h2>
         <p>
           작품 전시뿐만 아니라 행사 및 문화재 홍보의 공간으로 활용 가능
           <br /> 시간과 비용을 절약하며 문화 예술 향유 가능
@@ -52,6 +54,16 @@ export const Info = () => {
         </p>
         <img alt="metaverse" src="images/15.png" />
       </div>
+      <Link to="/publist">
+        <Btn
+          btnText="look around"
+          width="10rem"
+          type="submit"
+          fontFamily="Bebas Neue"
+          fontsize="1.8rem"
+          margin="0 0 2rem  0"
+        />
+      </Link>
     </InfoContainer>
   );
 };
@@ -62,7 +74,17 @@ const InfoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+p{
+  line-height:2rem;
+  padding:1rem;
+}
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size:2.5rem;
+  line-height:5rem;
+  border-bottom:0.1px solid white;
+  margin-bottom:2rem;
+}
   div{
     width:60rem;
     padding:1rem;

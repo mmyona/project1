@@ -28,22 +28,42 @@ export const MainHeader = () => {
       <NavManu isToggleOpen={isToggleOpen}>
         <li>
           <Link to="/info">
-            <Btn btnText="서비스 소개" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="서비스 소개"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
           </Link>
         </li>
         <li>
           <Link to="/publist">
-            <Btn btnText="public 전시" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="public 전시"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
           </Link>
         </li>
         <li>
           <Link to="/privlist">
-            <Btn btnText="private 전시" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="private 전시"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
           </Link>
         </li>
         <li>
           <Link to="/center">
-            <Btn btnText="고객 센터" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="고객 센터"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
           </Link>
         </li>
         <div className="searchInput">
@@ -56,8 +76,23 @@ export const MainHeader = () => {
           />
         </div>
         <li>
+          <Link to="/login">
+            <Btn
+              btnText="login"
+              width="6rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
+          </Link>
+        </li>
+        <li>
           <Link to="/mypage">
-            <Btn btnText="my page" width="8rem" activeClassName="active" />
+            <Btn
+              btnText="my page"
+              width="8rem"
+              activeClassName="active"
+              fontWeight="600"
+            />
           </Link>
         </li>
       </NavManu>
@@ -76,8 +111,8 @@ const StyledHeader = styled.header`
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 0;
   right: 0;
+
   padding: 0 1.3rem;
   display: flex;
   align-items: center;
@@ -95,9 +130,6 @@ const StyledHeader = styled.header`
 
   img {
     height: 8rem;
-    /*:hover {
-      transform: rotateY(180deg);
-    }*/
   }
 
   div {

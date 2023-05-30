@@ -1,17 +1,14 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import styled from "styled-components";
 import { Suspense } from "react";
 
 //routing components
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Mypage } from "../pages/Mypage";
-import { Signup } from "../pages/Signup";
 import { Info } from "../pages/Info";
 import { Request } from "../pages/Request";
 import { Questions } from "../pages/Questions";
 import { Bugs } from "../pages/Bugs";
-import { CenterMenu } from "../components/CenterMenu";
 import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
 import { Certify } from "../pages/Certify";
@@ -46,8 +43,6 @@ export const Router = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/list/:unityId" element={<UnityInfo />} />
           <Route path="/publist" element={<UnityList />} />
           <Route path="/privlist" element={<UnityList />} />
           <Route path="/info" element={<Info />} />
@@ -57,6 +52,7 @@ export const Router = () => {
           <Route path="/bugs" element={<Bugs />} />
           <Route path="/find" element={<Find />} />
           <Route path="/certify" element={<Certify />} />
+          <Route path="/list/:unityId" element={<UnityInfo />} />
         </Route>
         <Route element={<Overlaps hasHeader={false} hasFooter={false} />}>
           <Route path="/unity1" element={<Unity1 />} />

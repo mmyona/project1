@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Btn } from "../components/atoms/Button";
 import { InputAuth } from "../components/atoms/Input";
 import styled from "styled-components";
 import { Avatar } from "../components/atoms/Avatar";
-import { Wrapper } from "./Signup";
+import { Wrapper } from "./Login";
 import { ImageUploader } from "../components/ImageUploader";
-import { KLogin } from "../components/KLogin";
+import axios from "axios";
 
 export const Mypage = () => {
   const [user, setUser] = useState({
@@ -32,6 +32,35 @@ export const Mypage = () => {
     setEditing(false);
   };
 
+  const getUserData = async () => {
+    const accessToken = localStorage.getItem("authorization");
+    const userId = localStorage.getItem("userId");
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_SERVER_URL}/api/user/find?userid=${userId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          withCredentials: true,
+        }
+      );
+
+      if (response.status === 200) {
+        const userData = {
+          name: response.data.nickname,
+          id: response.data.id,
+          email: response.data.email ? response.data.email : "",
+          phone: "",
+        };
+        setUser(userData);
+      }
+    } catch (error) {
+      console.log(accessToken);
+      console.error(error);
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUser((prevUser) => ({
@@ -42,9 +71,16 @@ export const Mypage = () => {
 
   return (
     <MContainer>
+      <Btn
+        btnText="user data loading"
+        width="8rem"
+        fontsize="0.8rem"
+        type="submit"
+        onClick={getUserData}
+      />
       {editing ? (
         <Wrapper onSubmit={handleSubmit}>
-          <h3>마이페이지</h3>
+          <h2>My Page</h2>
           <div>
             프로필 이미지
             <ImageUploader onImageChange={(img) => setImage(img)} />
@@ -98,7 +134,7 @@ export const Mypage = () => {
         </Wrapper>
       ) : (
         <Wrapper>
-          <h3>마이페이지</h3>
+          <h3>my page</h3>
           <Avatar width="10rem" />
           <p>이름 : {user.name}</p>
           <p>아이디 : {user.id}</p>
@@ -111,7 +147,6 @@ export const Mypage = () => {
             type="submit"
             onClick={handleEditClick}
           />
-          <KLogin />
         </Wrapper>
       )}
     </MContainer>
@@ -122,5 +157,12 @@ const MContainer = styled.div`
   padding: 1rem;
   p {
     color: white;
+  }
+  h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    border-bottom: 0.1px solid white;
+    margin-bottom: 2rem;
   }
 `;

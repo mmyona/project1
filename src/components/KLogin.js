@@ -7,24 +7,21 @@ import { Btn } from "./atoms/Button";
 export const KLogin = () => {
   const [isKakaoLoggedin, setIsKakaoLoggedin] = useState(false);
   const [id, setId] = useState("");
-  const [accessToken, setAccessToken] = useState("");
+  /*const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
-  const [provider, setProvider] = useState("kakao");
+  const [provider, setProvider] = useState("kakao");*/
 
   useEffect(() => {
     // 로그인 상태 체크
-    window.Kakao.Auth.getStatusInfo((statusInfo) => {
-      if (statusInfo.status === "connected") {
-        setIsKakaoLoggedin(true);
-      }
-    });
-    console.log(isKakaoLoggedin);
+    //window.Kakao.Auth.getStatusInfo((statusInfo) => {
+    if (localStorage.getItem("authorization")) {
+      setIsKakaoLoggedin(true);
+    }
   }, []);
 
   const onKakaoLoginSuccess = (res) => {
-    console.log(res); // 로그인 성공 시 콘솔에 결과 출력
     setIsKakaoLoggedin(true);
-    setAccessToken(res.response.access_token);
+    //setAccessToken(res.response.access_token);
     const {
       profile: { id },
       response: { access_token: accessToken, refresh_token: refreshToken },
@@ -32,16 +29,16 @@ export const KLogin = () => {
     window.Kakao.API.request({
       url: "/v2/user/me",
       success: function (response) {
-        console.log(response); // 사용자 정보 출력
-        const { nickname, profile_image } = response.properties;
+        // const { nickname, profile_image } = response.properties;
         // 닉네임과 프로필 사진 URL을 사용할 수 있습니다.
-        console.log(nickname, profile_image);
       },
       fail: function (error) {
         console.log(error); // 에러 처리
       },
     });
     // 서버에게 token 넘겨주기
+    localStorage.setItem("authorization", res.response.access_token);
+    localStorage.setItem("userId", res.profile.id);
     sendTokenToServer(accessToken);
   };
 
@@ -50,13 +47,40 @@ export const KLogin = () => {
     setIsKakaoLoggedin(false);
   };
 
+  const handleKakaoLogout = (e) => {
+    e.preventDefault();
+    sendServerToLogout(localStorage.getItem("authorization"));
+    if (window.Kakao.Auth.getAccessToken()) {
+      window.Kakao.API.request({
+        url: "/v1/user/unlink",
+        success: function (response) {},
+        fail: function (error) {
+          console.log(error);
+        },
+      });
+      // 상태와 데이터 초기화
+      localStorage.removeItem("authorization");
+      localStorage.removeItem("userId");
+      setIsKakaoLoggedin(false);
+      //setAccessToken("");
+      //setRefreshToken("");
+    }
+  };
+
   const sendTokenToServer = (token) => {
     // 서버에게 토큰을 전송하는 코드 작성
     axios
-      .post("/api/login", { token }, { withCredentials: true })
+      .post(
+        `${process.env.REACT_APP_SERVER_URL}/api/oauth/kakao/login?access_token=${token}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      )
       .then((response) => {
-        // 서버 응답 처리
-        console.log(response);
+        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
       })
       .catch((error) => {
         // 에러 처리
@@ -64,28 +88,25 @@ export const KLogin = () => {
       });
   };
 
-  const handleKakaoLogout = (e) => {
-    e.preventDefault();
-    window.Kakao.Auth.logout(() => {
-      // 서버에 로그아웃 요청 보내기
-      axios
-        .post("/api/logout", null, { withCredentials: true })
-        .then((response) => {
-          // 서버 응답 처리
-          console.log(response);
-        })
-        .catch((error) => {
-          // 에러 처리
-          console.log(error);
-        });
-
-      // 상태와 데이터 초기화
-      setIsKakaoLoggedin(false);
-      setAccessToken("");
-      setRefreshToken("");
-
-      // 기타 초기화 작업 수행
-    });
+  const sendServerToLogout = (token) => {
+    axios
+      .post(
+        `${process.env.REACT_APP_SERVER_URL}/api/oauth/kakao/logout?access_token=${token}`,
+        null,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        }
+      )
+      .then((response) => {
+        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
+      })
+      .catch((error) => {
+        // 에러 처리
+        console.log(error);
+      });
   };
 
   return (
