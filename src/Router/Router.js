@@ -12,10 +12,11 @@ import { Bugs } from "../pages/Bugs";
 import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
 import { Certify } from "../pages/Certify";
+import { EditData } from "../pages/EditData";
 
 //unity components
 import { UnityList } from "../pages/UnityList";
-import { Unity1 } from "../unityMaps/Unity1";
+import { Chess } from "../unityMaps/Chess";
 import { Unity2 } from "../unityMaps/Unity2";
 import { Unity3 } from "../unityMaps/Unity3";
 import { Unity4 } from "../unityMaps/Unity4";
@@ -43,6 +44,7 @@ export const Router = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/mypage/edit" element={<EditData />} />
           <Route path="/publist" element={<UnityList />} />
           <Route path="/privlist" element={<UnityList />} />
           <Route path="/info" element={<Info />} />
@@ -55,7 +57,7 @@ export const Router = () => {
           <Route path="/list/:unityId" element={<UnityInfo />} />
         </Route>
         <Route element={<Overlaps hasHeader={false} hasFooter={false} />}>
-          <Route path="/unity1" element={<Unity1 />} />
+          <Route path="/unity1" element={<Chess />} />
           <Route path="/unity2" element={<Unity2 />} />
           <Route path="/unity3" element={<Unity3 />} />
           <Route path="/unity4" element={<Unity4 />} />
