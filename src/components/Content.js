@@ -5,7 +5,7 @@ export const Content = () => {
     <ContentStyle>
       <h3>맵 조작법</h3>
       <StyledImage src="/images/explain.png" alt="key explanation" />
-      <p>위 조작법을 잘 익힌 뒤에 전시에 입장하시기 바랍니다. </p>
+      <p>위 조작법을 잘 익힌 뒤에 전시에 입장하시기 바랍니다</p>
     </ContentStyle>
   );
 };

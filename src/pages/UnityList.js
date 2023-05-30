@@ -16,7 +16,7 @@ export const UnityList = () => {
               src={item.src}
               title={item.title}
               text={item.text}
-              link={`/list/${item.id}`}
+              link={`/publist/${item.id}`}
             />
           </Col>
         ))}

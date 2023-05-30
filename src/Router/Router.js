@@ -13,12 +13,14 @@ import { Center } from "../pages/Center";
 import { Find } from "../pages/Find";
 import { Certify } from "../pages/Certify";
 import { EditData } from "../pages/EditData";
+import { PrivUnityList } from "../pages/PrivUnityList";
+import { PrivUnityInfo } from "../pages/PrivUnityInfo";
 
 //unity components
 import { UnityList } from "../pages/UnityList";
 import { Chess } from "../unityMaps/Chess";
-import { Unity2 } from "../unityMaps/Unity2";
-import { Unity3 } from "../unityMaps/Unity3";
+import { Park } from "../unityMaps/Park";
+import { Plaza } from "../unityMaps/Plaza";
 import { Unity4 } from "../unityMaps/Unity4";
 import { Unity5 } from "../unityMaps/Unity5";
 import { UnityInfo } from "../pages/UnityInfo";
@@ -46,7 +48,7 @@ export const Router = () => {
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/mypage/edit" element={<EditData />} />
           <Route path="/publist" element={<UnityList />} />
-          <Route path="/privlist" element={<UnityList />} />
+          <Route path="/privlist" element={<PrivUnityList />} />
           <Route path="/info" element={<Info />} />
           <Route path="/center" element={<Center />} />
           <Route path="/qa" element={<Questions />} />
@@ -54,12 +56,13 @@ export const Router = () => {
           <Route path="/bugs" element={<Bugs />} />
           <Route path="/find" element={<Find />} />
           <Route path="/certify" element={<Certify />} />
-          <Route path="/list/:unityId" element={<UnityInfo />} />
+          <Route path="/publist/:unityId" element={<UnityInfo />} />
+          <Route path="/privlist/:unityId" element={<PrivUnityInfo />} />
         </Route>
         <Route element={<Overlaps hasHeader={false} hasFooter={false} />}>
           <Route path="/unity1" element={<Chess />} />
-          <Route path="/unity2" element={<Unity2 />} />
-          <Route path="/unity3" element={<Unity3 />} />
+          <Route path="/unity2" element={<Park />} />
+          <Route path="/unity3" element={<Plaza />} />
           <Route path="/unity4" element={<Unity4 />} />
           <Route path="/unity5" element={<Unity5 />} />
         </Route>

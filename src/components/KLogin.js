@@ -64,6 +64,10 @@ export const KLogin = () => {
       // 상태와 데이터 초기화
       localStorage.removeItem("authorization");
       localStorage.removeItem("userId");
+      localStorage.removeItem("nickname");
+      localStorage.removeItem("profile_image");
+      localStorage.removeItem("email");
+      localStorage.removeItem("phone");
       setIsKakaoLoggedin(false);
     }
   };

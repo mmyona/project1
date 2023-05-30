@@ -46,16 +46,4 @@ export const UnityListData = [
 `,
     src: "/images/plaza.png",
   },
-  {
-    id: 4,
-    title: "unity4",
-    text: "The forth",
-    src: "/images/The Imaginarium (2).png",
-  },
-  {
-    id: 5,
-    title: "unity5",
-    text: "The fifth",
-    src: "/images/The Imaginarium (2).png",
-  },
 ];

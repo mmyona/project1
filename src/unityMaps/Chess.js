@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { useNavigate } from "react-router-dom";
 
 export const Chess = () => {
-  const {
-    unityProvider,
-    UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate,
-  } = useUnityContext({
+  const navigate = useNavigate();
+
+  const { unityProvider, UNSAFE__detachAndUnloadImmediate } = useUnityContext({
     loaderUrl: "Chess/Build/Chess.loader.js",
     dataUrl: "Chess/Build/Chess.data",
     frameworkUrl: "Chess/Build/Chess.framework.js",
@@ -13,12 +13,21 @@ export const Chess = () => {
   });
 
   useEffect(() => {
-    return () => {
-      detachAndUnloadImmediate().catch((reason) => {
-        console.log(reason);
-      });
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 27) {
+        // ESC key (key code 27) is pressed, navigate to previous page
+        navigate(-1);
+      }
     };
-  }, [detachAndUnloadImmediate]);
+
+    // Register event listener
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [navigate]);
 
   return (
     <div

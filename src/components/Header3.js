@@ -26,7 +26,7 @@ export const MainHeader = () => {
         <img alt="logo" src="/images/The Imaginarium (2).png" />
       </Link>
       <NavManu isToggleOpen={isToggleOpen}>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/info">
             <Btn
               btnText="서비스 소개"
@@ -36,7 +36,7 @@ export const MainHeader = () => {
             />
           </Link>
         </li>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/publist">
             <Btn
               btnText="public 전시"
@@ -46,7 +46,7 @@ export const MainHeader = () => {
             />
           </Link>
         </li>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/privlist">
             <Btn
               btnText="private 전시"
@@ -56,7 +56,7 @@ export const MainHeader = () => {
             />
           </Link>
         </li>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/center">
             <Btn
               btnText="고객 센터"
@@ -75,7 +75,7 @@ export const MainHeader = () => {
             }}
           />
         </div>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/login">
             <Btn
               btnText="login"
@@ -85,7 +85,7 @@ export const MainHeader = () => {
             />
           </Link>
         </li>
-        <li onClick={handleToggleOpen}>
+        <li>
           <Link to="/mypage">
             <Btn
               btnText="my page"
@@ -146,7 +146,6 @@ const StyledHeader = styled.header`
     }
   }
 `;
-// NavManu 컴포넌트 수정
 const NavManu = styled.ul`
   list-style: none;
   display: flex;
@@ -159,14 +158,6 @@ const NavManu = styled.ul`
     margin-top: 5px;
     .searchInput {
       display: none;
-    }
-  }
-
-  li {
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
     }
   }
 `;
