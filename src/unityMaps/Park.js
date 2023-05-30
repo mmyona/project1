@@ -9,10 +9,10 @@ export const Park = () => {
     unityProvider,
     UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate,
   } = useUnityContext({
-    loaderUrl: "Garden (2)/Garden/Build/Garden.loader.js",
-    dataUrl: "Garden (2)/Garden/Build/Garden.data",
-    frameworkUrl: "Garden (2)/Garden/Build/Garden.framework.js",
-    codeUrl: "Garden (2)/Garden/Build/Garden.wasm",
+    loaderUrl: "Garden/Build/Garden.loader.js",
+    dataUrl: "Garden/Build/Garden.data",
+    frameworkUrl: "Garden/Build/Garden.framework.js",
+    codeUrl: "Garden/Build/Garden.wasm",
   });
 
   useEffect(() => {

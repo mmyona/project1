@@ -9,10 +9,10 @@ export const Plaza = () => {
     unityProvider,
     UNSAFE__detachAndUnloadImmediate: detachAndUnloadImmediate,
   } = useUnityContext({
-    loaderUrl: "Plaza/Plaza/Build/Plaza.loader.js",
-    dataUrl: "Plaza/Plaza/Build/Plaza.data",
-    frameworkUrl: "Plaza/Plaza/Build/Plaza.framework.js",
-    codeUrl: "Plaza/Plaza/Build/Plaza.wasm",
+    loaderUrl: "Plaza/Build/Plaza.loader.js",
+    dataUrl: "Plaza/Build/Plaza.data",
+    frameworkUrl: "Plaza/Build/Plaza.framework.js",
+    codeUrl: "Plaza/Build/Plaza.wasm",
   });
 
   useEffect(() => {
