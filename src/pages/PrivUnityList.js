@@ -16,6 +16,7 @@ export const PrivUnityList = () => {
               src={item.src}
               title={item.title}
               text={item.text}
+              id={item.id}
               link={`/privlist/${item.id}`}
             />
           </Col>

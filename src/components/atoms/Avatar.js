@@ -5,7 +5,10 @@ export const Avatar = (props) => {
   return (
     <>
       <StyledAvatar width={props.width}>
-        <img src={props.imgURL || "/images/미모티콘.png"} alt="avatar"></img>
+        <img
+          src={props.imgURL || "/images/The Imaginarium (2).png"}
+          alt="avatar"
+        ></img>
       </StyledAvatar>
     </>
   );

@@ -66,7 +66,7 @@ const InfoContainer = styled.div`
     white-space: pre-wrap;
   }
   img {
-    width: 70%;
+    width: 60%;
     margin-bottom: 2rem;
   }
 `;

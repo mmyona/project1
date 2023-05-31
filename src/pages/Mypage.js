@@ -34,7 +34,7 @@ export const Mypage = () => {
     <MContainer>
       <Wrapper>
         <h3>my page</h3>
-        <Avatar width="10rem" src={image} />
+        <Avatar width="10rem" imgURL={localStorage.getItem("profile_image")} />
         <p>이름 : {name}</p>
         <p>이메일 : {email}</p>
         <p>전화 번호 : {phone}</p>

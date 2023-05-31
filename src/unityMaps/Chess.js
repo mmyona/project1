@@ -6,10 +6,10 @@ export const Chess = () => {
   const navigate = useNavigate();
 
   const { unityProvider, UNSAFE__detachAndUnloadImmediate } = useUnityContext({
-    loaderUrl: "Chess/Build/Chess.loader.js",
-    dataUrl: "Chess/Build/Chess.data",
-    frameworkUrl: "Chess/Build/Chess.framework.js",
-    codeUrl: "Chess/Build/Chess.wasm",
+    loaderUrl: "Chess/Build/Chess_VR.loader.js",
+    dataUrl: "Chess/Build/Chess_VR.data",
+    frameworkUrl: "Chess/Build/Chess_VR.framework.js",
+    codeUrl: "Chess/Build/Chess_VR.wasm",
   });
 
   useEffect(() => {

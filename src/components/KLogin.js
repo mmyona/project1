@@ -3,12 +3,14 @@ import KakaoLogin from "react-kakao-login";
 import axios from "axios";
 import styled from "styled-components";
 import { Btn } from "./atoms/Button";
+import { useNavigate } from "react-router-dom";
 
 export const KLogin = () => {
   const [isKakaoLoggedin, setIsKakaoLoggedin] = useState(false);
   /*const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
   const [provider, setProvider] = useState("kakao");*/
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 로그인 상태 체크
@@ -69,6 +71,7 @@ export const KLogin = () => {
       localStorage.removeItem("email");
       localStorage.removeItem("phone");
       setIsKakaoLoggedin(false);
+      navigate("/");
     }
   };
 

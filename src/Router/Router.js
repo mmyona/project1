@@ -15,6 +15,7 @@ import { Certify } from "../pages/Certify";
 import { EditData } from "../pages/EditData";
 import { PrivUnityList } from "../pages/PrivUnityList";
 import { PrivUnityInfo } from "../pages/PrivUnityInfo";
+import { Check } from "../pages/Check";
 
 //unity components
 import { UnityList } from "../pages/UnityList";
@@ -55,6 +56,7 @@ export const Router = () => {
           <Route path="/request" element={<Request />} />
           <Route path="/bugs" element={<Bugs />} />
           <Route path="/find" element={<Find />} />
+          <Route path="/check/:unityId" element={<Check />} />
           <Route path="/certify" element={<Certify />} />
           <Route path="/publist/:unityId" element={<UnityInfo />} />
           <Route path="/privlist/:unityId" element={<PrivUnityInfo />} />
