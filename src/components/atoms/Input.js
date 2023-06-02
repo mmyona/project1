@@ -62,5 +62,10 @@ const Wrapper = styled.div`
   width: 36.4rem;
   span {
     font-size: ${(props) => props.fontSize || "1rem"};
+    margin-bottom: 1rem;
+  }
+  p {
+    color: red;
+    margin-top: 1rem;
   }
 `;

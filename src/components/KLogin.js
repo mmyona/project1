@@ -3,13 +3,14 @@ import KakaoLogin from "react-kakao-login";
 import axios from "axios";
 import styled from "styled-components";
 import { Btn } from "./atoms/Button";
+import { useNavigate } from "react-router-dom";
 
 export const KLogin = () => {
   const [isKakaoLoggedin, setIsKakaoLoggedin] = useState(false);
-  const [id, setId] = useState("");
   /*const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
   const [provider, setProvider] = useState("kakao");*/
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 로그인 상태 체크
@@ -31,13 +32,17 @@ export const KLogin = () => {
       success: function (response) {
         // const { nickname, profile_image } = response.properties;
         // 닉네임과 프로필 사진 URL을 사용할 수 있습니다.
+        localStorage.setItem("nickname", response.properties.nickname);
+        localStorage.setItem(
+          "profile_image",
+          response.properties.profile_image
+        );
       },
       fail: function (error) {
         console.log(error); // 에러 처리
       },
     });
-    // 서버에게 token 넘겨주기
-    localStorage.setItem("authorization", res.response.access_token);
+    localStorage.setItem("authorization", accessToken);
     localStorage.setItem("userId", res.profile.id);
     sendTokenToServer(accessToken);
   };
@@ -52,7 +57,7 @@ export const KLogin = () => {
     sendServerToLogout(localStorage.getItem("authorization"));
     if (window.Kakao.Auth.getAccessToken()) {
       window.Kakao.API.request({
-        url: "/v1/user/unlink",
+        url: "/v1/user/logout",
         success: function (response) {},
         fail: function (error) {
           console.log(error);
@@ -61,14 +66,16 @@ export const KLogin = () => {
       // 상태와 데이터 초기화
       localStorage.removeItem("authorization");
       localStorage.removeItem("userId");
+      localStorage.removeItem("nickname");
+      localStorage.removeItem("profile_image");
+      localStorage.removeItem("email");
+      localStorage.removeItem("phone");
       setIsKakaoLoggedin(false);
-      //setAccessToken("");
-      //setRefreshToken("");
+      navigate("/");
     }
   };
 
   const sendTokenToServer = (token) => {
-    // 서버에게 토큰을 전송하는 코드 작성
     axios
       .post(
         `${process.env.REACT_APP_SERVER_URL}/api/oauth/kakao/login?access_token=${token}`,
@@ -80,10 +87,9 @@ export const KLogin = () => {
         }
       )
       .then((response) => {
-        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
+        console.log(response.data);
       })
       .catch((error) => {
-        // 에러 처리
         console.log(error);
       });
   };
@@ -101,10 +107,9 @@ export const KLogin = () => {
         }
       )
       .then((response) => {
-        console.log(response.data); // 예시로 응답 데이터를 콘솔에 출력
+        console.log(response.data);
       })
       .catch((error) => {
-        // 에러 처리
         console.log(error);
       });
   };

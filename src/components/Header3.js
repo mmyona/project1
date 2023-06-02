@@ -15,6 +15,9 @@ export const MainHeader = () => {
   const handleToggleOpen = () => {
     setIsToggleOpen(!isToggleOpen);
   };
+  const handleMenuClick = () => {
+    setIsToggleOpen(false);
+  };
 
   const [searchTerm, setSearchTerm] = useState(""); //검색어
   const handleSearch = (e) => {
@@ -27,7 +30,7 @@ export const MainHeader = () => {
       </Link>
       <NavManu isToggleOpen={isToggleOpen}>
         <li>
-          <Link to="/info">
+          <Link to="/info" onClick={handleMenuClick}>
             <Btn
               btnText="서비스 소개"
               width="8rem"
@@ -37,7 +40,7 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/publist">
+          <Link to="/publist" onClick={handleMenuClick}>
             <Btn
               btnText="public 전시"
               width="8rem"
@@ -47,7 +50,7 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/privlist">
+          <Link to="/privlist" onClick={handleMenuClick}>
             <Btn
               btnText="private 전시"
               width="8rem"
@@ -57,7 +60,7 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/center">
+          <Link to="/center" onClick={handleMenuClick}>
             <Btn
               btnText="고객 센터"
               width="8rem"
@@ -66,7 +69,7 @@ export const MainHeader = () => {
             />
           </Link>
         </li>
-        <div className="searchInput">
+        <div className="searchInput" onClick={handleMenuClick}>
           <SearchInput
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -76,7 +79,7 @@ export const MainHeader = () => {
           />
         </div>
         <li>
-          <Link to="/login">
+          <Link to="/login" onClick={handleMenuClick}>
             <Btn
               btnText="login"
               width="6rem"
@@ -86,7 +89,7 @@ export const MainHeader = () => {
           </Link>
         </li>
         <li>
-          <Link to="/mypage">
+          <Link to="/mypage" onClick={handleMenuClick}>
             <Btn
               btnText="my page"
               width="8rem"
@@ -138,7 +141,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1445px) {
     flex-direction: column;
     align-items: flex-start;
     .menuToggleBtn {
@@ -150,7 +153,7 @@ const NavManu = styled.ul`
   list-style: none;
   display: flex;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1445px) {
     display: ${(props) => (props.isToggleOpen ? "block" : "none")};
     flex-direction: column;
     align-items: center;
